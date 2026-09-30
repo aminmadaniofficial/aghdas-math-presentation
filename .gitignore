@@ -1,0 +1,16 @@
+# OS & Editor files
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+*~
+.idea/
+.vscode/
+
+# Temp Media & Logs
+*.log
+.tempmediaStorage/
+scratch/
+
+# Archives (keep if needed, or gitignore temporary archives)
+*.tar.gz

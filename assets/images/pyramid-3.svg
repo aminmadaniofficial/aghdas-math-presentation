@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 92 82" width="92" height="82" fill="none">
+  <polygon points="46.0,32.0 60.0,40.0 46.0,48.0 32.0,40.0" fill="#fbbf24" stroke="#0f172a" stroke-width="1.2" stroke-linejoin="round"/>
+  <polygon points="32.0,40.0 46.0,48.0 46.0,62.0 32.0,54.0" fill="#d97706" stroke="#0f172a" stroke-width="1.2" stroke-linejoin="round"/>
+  <polygon points="46.0,48.0 60.0,40.0 60.0,54.0 46.0,62.0" fill="#b45309" stroke="#0f172a" stroke-width="1.2" stroke-linejoin="round"/>
+  <polygon points="46.0,18.0 60.0,26.0 46.0,34.0 32.0,26.0" fill="#34d399" stroke="#0f172a" stroke-width="1.2" stroke-linejoin="round"/>
+  <polygon points="32.0,26.0 46.0,34.0 46.0,48.0 32.0,40.0" fill="#059669" stroke="#0f172a" stroke-width="1.2" stroke-linejoin="round"/>
+  <polygon points="46.0,34.0 60.0,26.0 60.0,40.0 46.0,48.0" fill="#047857" stroke="#0f172a" stroke-width="1.2" stroke-linejoin="round"/>
+  <polygon points="32.0,40.0 46.0,48.0 32.0,56.0 18.0,48.0" fill="#fbbf24" stroke="#0f172a" stroke-width="1.2" stroke-linejoin="round"/>
+  <polygon points="18.0,48.0 32.0,56.0 32.0,70.0 18.0,62.0" fill="#d97706" stroke="#0f172a" stroke-width="1.2" stroke-linejoin="round"/>
+  <polygon points="32.0,56.0 46.0,48.0 46.0,62.0 32.0,70.0" fill="#b45309" stroke="#0f172a" stroke-width="1.2" stroke-linejoin="round"/>
+  <polygon points="60.0,40.0 74.0,48.0 60.0,56.0 46.0,48.0" fill="#fbbf24" stroke="#0f172a" stroke-width="1.2" stroke-linejoin="round"/>
+  <polygon points="46.0,48.0 60.0,56.0 60.0,70.0 46.0,62.0" fill="#d97706" stroke="#0f172a" stroke-width="1.2" stroke-linejoin="round"/>
+  <polygon points="60.0,56.0 74.0,48.0 74.0,62.0 60.0,70.0" fill="#b45309" stroke="#0f172a" stroke-width="1.2" stroke-linejoin="round"/>
+  <polygon points="46.0,4.0 60.0,12.0 46.0,20.0 32.0,12.0" fill="#38bdf8" stroke="#0f172a" stroke-width="1.2" stroke-linejoin="round"/>
+  <polygon points="32.0,12.0 46.0,20.0 46.0,34.0 32.0,26.0" fill="#0284c7" stroke="#0f172a" stroke-width="1.2" stroke-linejoin="round"/>
+  <polygon points="46.0,20.0 60.0,12.0 60.0,26.0 46.0,34.0" fill="#0369a1" stroke="#0f172a" stroke-width="1.2" stroke-linejoin="round"/>
+  <polygon points="32.0,26.0 46.0,34.0 32.0,42.0 18.0,34.0" fill="#34d399" stroke="#0f172a" stroke-width="1.2" stroke-linejoin="round"/>
+  <polygon points="18.0,34.0 32.0,42.0 32.0,56.0 18.0,48.0" fill="#059669" stroke="#0f172a" stroke-width="1.2" stroke-linejoin="round"/>
+  <polygon points="32.0,42.0 46.0,34.0 46.0,48.0 32.0,56.0" fill="#047857" stroke="#0f172a" stroke-width="1.2" stroke-linejoin="round"/>
+  <polygon points="60.0,26.0 74.0,34.0 60.0,42.0 46.0,34.0" fill="#34d399" stroke="#0f172a" stroke-width="1.2" stroke-linejoin="round"/>
+  <polygon points="46.0,34.0 60.0,42.0 60.0,56.0 46.0,48.0" fill="#059669" stroke="#0f172a" stroke-width="1.2" stroke-linejoin="round"/>
+  <polygon points="60.0,42.0 74.0,34.0 74.0,48.0 60.0,56.0" fill="#047857" stroke="#0f172a" stroke-width="1.2" stroke-linejoin="round"/>
+  <polygon points="18.0,48.0 32.0,56.0 18.0,64.0 4.0,56.0" fill="#fbbf24" stroke="#0f172a" stroke-width="1.2" stroke-linejoin="round"/>
+  <polygon points="4.0,56.0 18.0,64.0 18.0,78.0 4.0,70.0" fill="#d97706" stroke="#0f172a" stroke-width="1.2" stroke-linejoin="round"/>
+  <polygon points="18.0,64.0 32.0,56.0 32.0,70.0 18.0,78.0" fill="#b45309" stroke="#0f172a" stroke-width="1.2" stroke-linejoin="round"/>
+  <polygon points="46.0,48.0 60.0,56.0 46.0,64.0 32.0,56.0" fill="#fbbf24" stroke="#0f172a" stroke-width="1.2" stroke-linejoin="round"/>
+  <polygon points="32.0,56.0 46.0,64.0 46.0,78.0 32.0,70.0" fill="#d97706" stroke="#0f172a" stroke-width="1.2" stroke-linejoin="round"/>
+  <polygon points="46.0,64.0 60.0,56.0 60.0,70.0 46.0,78.0" fill="#b45309" stroke="#0f172a" stroke-width="1.2" stroke-linejoin="round"/>
+  <polygon points="74.0,48.0 88.0,56.0 74.0,64.0 60.0,56.0" fill="#fbbf24" stroke="#0f172a" stroke-width="1.2" stroke-linejoin="round"/>
+  <polygon points="60.0,56.0 74.0,64.0 74.0,78.0 60.0,70.0" fill="#d97706" stroke="#0f172a" stroke-width="1.2" stroke-linejoin="round"/>
+  <polygon points="74.0,64.0 88.0,56.0 88.0,70.0 74.0,78.0" fill="#b45309" stroke="#0f172a" stroke-width="1.2" stroke-linejoin="round"/>
+</svg>

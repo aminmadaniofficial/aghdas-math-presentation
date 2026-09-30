@@ -1,0 +1,1930 @@
+<!-- Developed By Amin Madani -->
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>تحلیل هندسی و جبری مسئله‌های ۱۲ و ۱۳ ریاضی تکمیلی هفتم — روش اقدس</title>
+
+  <!-- KaTeX Typography & Math Engine (Fully Offline) -->
+  <link rel="stylesheet" href="assets/vendor/katex.min.css">
+  
+  <!-- Architectural Presentation Deck Stylesheet (Vazirmatn + Font Yas Numbers) -->
+  <link rel="stylesheet" href="assets/css/style.css?v=8.0">
+</head>
+<body>
+  <!-- Architectural Coordinate Grid Background -->
+  <div class="geist-grid-background"></div>
+
+  <!-- App Viewport -->
+  <div id="geist-presentation">
+
+    <!-- ================= SLIDE STAGE ================= -->
+    <main class="geist-stage">
+
+      <!-- ================= SLIDE 1: FORMAL ACADEMIC COVER SLIDE ================= -->
+      <section class="geist-slide slide-item active" id="slide-1">
+        <div class="cover-slide-wrapper">
+          <div class="cover-card-container">
+            <span class="corner-cross tl">+</span><span class="corner-cross tr">+</span><span class="corner-cross bl">+</span><span class="corner-cross br">+</span>
+            
+            <!-- Academic Institution Badge with Prominent Official Crest Logo -->
+            <div class="cover-school-crest-section">
+              <img src="assets/images/school-logo.png" alt="نشان رسمی دبیرستان استعدادهای درخشان شهید باهنر ۳ کرج" class="school-logo-prominent">
+              <div class="cover-institution-badge">
+                <span class="school-name-text">دبیرستان استعدادهای درخشان شهید باهنر ۳ کرج (سمپاد)</span>
+                <span class="badge-separator">•</span>
+                <span class="course-name-text">ریاضیات تکمیلی پایه هفتم</span>
+              </div>
+            </div>
+
+            <!-- Main Title & Topic -->
+            <div class="cover-title-group">
+              <h1 class="cover-main-title">
+                تحلیل هندسی و فضایی <span class="cover-title-highlight">روش اقدس</span>
+              </h1>
+              <p class="cover-subtitle">
+                حل مسئله‌های ۱۲ و ۱۳ کتاب ریاضی تکمیلی پایه هفتم (سمپاد)
+              </p>
+              <p class="cover-lead-desc">
+                محاسبه مجموع اعداد هرمی با انطباق ۴ کپی در فضا و تعمیم آن به سیمپلکس‌های بعد چهارم
+              </p>
+            </div>
+
+            <div class="cover-divider-line"></div>
+
+            <!-- Metadata Grid: Teacher, Presenters, Date -->
+            <div class="cover-meta-grid">
+              <!-- Teacher Card -->
+              <div class="cover-meta-card teacher-card">
+                <div class="cover-meta-header">
+                  <div class="cover-meta-icon teacher-icon">
+                    <i data-lucide="award"></i>
+                  </div>
+                  <span class="cover-meta-label">دبیر محترم:</span>
+                </div>
+                <div class="cover-meta-value teacher-name">استاد قربانی</div>
+              </div>
+
+              <!-- Presenters Card -->
+              <div class="cover-meta-card presenters-card">
+                <div class="cover-meta-header">
+                  <div class="cover-meta-icon presenters-icon">
+                    <i data-lucide="users"></i>
+                  </div>
+                  <span class="cover-meta-label">ارائه‌دهندگان:</span>
+                </div>
+                <div class="cover-meta-value presenters-names">
+                  <span class="presenter-tag">محمدامین مدنی محمدی</span>
+                  <span class="presenters-and">و</span>
+                  <span class="presenter-tag">حسین حسین‌زاده</span>
+                </div>
+              </div>
+
+              <!-- Date Card -->
+              <div class="cover-meta-card date-card">
+                <div class="cover-meta-header">
+                  <div class="cover-meta-icon date-icon">
+                    <i data-lucide="calendar"></i>
+                  </div>
+                  <span class="cover-meta-label">تاریخ ارائه:</span>
+                </div>
+                <div class="cover-meta-value date-text">چهارشنبه <span class="yas-digit">۸</span> مهر</div>
+              </div>
+            </div>
+
+            <!-- Action Button -->
+            <div class="cover-actions-row">
+              <button class="btn-shadcn btn-shadcn-default hero-primary-btn btn-shimmer" id="hero-start-cta">
+                <span>ورود به ارائه کلاسی</span>
+                <i data-lucide="arrow-left"></i>
+                <kbd class="hero-kbd-badge">Space / &larr;</kbd>
+              </button>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      <!-- ================= SLIDE 2: CHAND-PELLEH (STAIRCASE & TRIANGULAR NUMBERS) ================= -->
+      <section class="geist-slide slide-item" id="slide-2">
+        <div class="slide-intro-header">
+          <span class="badge-shadcn">
+            <i data-lucide="layers"></i>
+            <span>مفهوم بنیادین — کتاب ریاضی تکمیلی سمپاد (آموزش گام‌به‌گام)</span>
+          </span>
+          <h2 class="slide-main-title">سازه پله‌ای سه‌بعدی و کشف فرمول مکعب‌های اقدس</h2>
+          <p class="slide-sub-desc">تحلیل گام‌به‌گام هرم گوشه‌ای مکعب‌ها (۱، ۲، ۳ و ۴ پله‌ای)، تفکیک عمودی طبقات مثلثی و پیوند مستقیم به مسئله ۱۲</p>
+        </div>
+
+        <div class="geist-grid-2">
+          <!-- Right Column: Interactive Step-by-Step Educational Stepper -->
+          <div class="card-shadcn">
+            <span class="corner-cross tl">+</span><span class="corner-cross tr">+</span><span class="corner-cross bl">+</span><span class="corner-cross br">+</span>
+            
+            <!-- Step Navigation Toolbar -->
+            <div class="step-nav-bar" id="s2-step-navbar">
+              <button class="step-nav-btn" id="s2-prev-step-btn" title="گام قبلی">
+                <i data-lucide="chevron-right"></i>
+                <span>گام قبل</span>
+              </button>
+              <div class="step-indicator-badge">
+                <span id="s2-step-title-badge">گام ۱ از ۶: ۱-پله‌ای (۱ مکعب)</span>
+              </div>
+              <button class="step-nav-btn" id="s2-next-step-btn" title="گام بعدی">
+                <span>گام بعد</span>
+                <i data-lucide="chevron-left"></i>
+              </button>
+            </div>
+
+            <!-- Step Pill Tabs for Quick Direct Access -->
+            <div class="step-pill-tabs" id="s2-step-tabs" style="margin: 0.4rem 0;">
+              <button class="step-pill-tab active" data-step="1">۱: ۱-پله (۱)</button>
+              <button class="step-pill-tab" data-step="2">۲: ۲-پله (۴)</button>
+              <button class="step-pill-tab" data-step="3">۳: ۳-پله (۱۰)</button>
+              <button class="step-pill-tab" data-step="4">۴: ۴-پله (۲۰)</button>
+              <button class="step-pill-tab" data-step="5">۵: تفکیک طبقات</button>
+              <button class="step-pill-tab" data-step="6">۶: فرمول کل سازه</button>
+            </div>
+
+            <!-- Step 1 Pane -->
+            <div class="step-content-pane active" id="s2-pane-1">
+              <div class="code-math-box highlight-blue" style="margin-top: 0.2rem; padding: 0.55rem 0.85rem; text-align: right; direction: rtl !important;">
+                <div style="font-size: 0.95rem; font-weight: 800; color: #0369a1; margin-bottom: 0.25rem;">
+                  گام ۱: سازه ۱-پله‌ای ($S_1$) — قله هرم و تک‌مکعب واحد
+                </div>
+                <p style="font-size: 0.86rem; line-height: 1.65; color: #0369a1; margin: 0;">
+                  ساده‌ترین سازه پله‌ای است که تنها از <strong>۱ مکعب واحد</strong> در بالاترین طبقه تشکیل شده است:
+                </p>
+                <div class="math-tex math-block" data-tex="S_1 = T_1 = 1 = \frac{1 \times 2 \times 3}{6}"></div>
+              </div>
+
+              <!-- Spec Table -->
+              <table class="edu-spec-table">
+                <thead>
+                  <tr>
+                    <th>شاخص سازه</th>
+                    <th>مقدار عددی</th>
+                    <th>تحلیل هندسی و ساختاری</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><strong>تعداد طبقات فعال</strong></td>
+                    <td><span dir="ltr">۱</span> طبقه</td>
+                    <td>تنها شامل بالاترین لایه (قله هرم)</td>
+                  </tr>
+                  <tr>
+                    <td><strong>تعداد مکعب‌های لایه ۱</strong></td>
+                    <td><span dir="ltr">T₁ = ۱</span></td>
+                    <td>اولین عدد مثلثی</td>
+                  </tr>
+                  <tr>
+                    <td><strong>مجموع کل مکعب‌ها</strong></td>
+                    <td><span dir="ltr">S₁ = ۱</span></td>
+                    <td>نخستین جمله الگوی مسئله ۱۲ کتاب تکمیلی</td>
+                  </tr>
+                </tbody>
+              </table>
+
+              <div class="edu-insight-card">
+                <strong>نکته تدریس:</strong> این تک‌مکعب قله، سنگ‌بنای سازندهٔ تمامی هرم‌های چندپله‌ای بالاتر است و در هر سازه، نقش رأس را بازی می‌کند.
+              </div>
+            </div>
+
+            <!-- Step 2 Pane -->
+            <div class="step-content-pane" id="s2-pane-2">
+              <div class="code-math-box highlight-emerald" style="margin-top: 0.2rem; padding: 0.55rem 0.85rem; text-align: right; direction: rtl !important;">
+                <div style="font-size: 0.95rem; font-weight: 800; color: #047857; margin-bottom: 0.25rem;">
+                  گام ۲: سازه ۲-پله‌ای ($S_2$) — افزودن لایه ۳ تایی به زیر قله
+                </div>
+                <p style="font-size: 0.86rem; line-height: 1.65; color: #047857; margin: 0;">
+                  با قرار گرفتن یک لایه مثلثی از ۳ مکعب ($T_2 = 3$) در زیر تک‌مکعب قله ساخته می‌شود:
+                </p>
+                <div class="math-tex math-block" data-tex="S_2 = T_1 + T_2 = 1 + 3 = 4 = \frac{2 \times 3 \times 4}{6}"></div>
+              </div>
+
+              <!-- Spec Table -->
+              <table class="edu-spec-table">
+                <thead>
+                  <tr>
+                    <th>شاخص سازه</th>
+                    <th>مقدار عددی</th>
+                    <th>تحلیل هندسی و ساختاری</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><strong>طبقه اول (بالا)</strong></td>
+                    <td><span dir="ltr">T₁ = ۱</span> مکعب</td>
+                    <td>قله هرم روی طبقه زیرین تکیه دارد</td>
+                  </tr>
+                  <tr>
+                    <td><strong>طبقه دوم (پایین)</strong></td>
+                    <td><span dir="ltr">T₂ = ۳</span> مکعب</td>
+                    <td>آرایش مثلثی شامل ۳ مکعب در کف</td>
+                  </tr>
+                  <tr>
+                    <td><strong>مجموع کل مکعب‌ها</strong></td>
+                    <td><span dir="ltr">S₂ = ۴</span> مکعب</td>
+                    <td>دومین جمله در الگوی مسئله ۱۲ کتاب تکمیلی</td>
+                  </tr>
+                </tbody>
+              </table>
+
+              <div class="edu-insight-card" style="border-right-color: #059669;">
+                <strong>دیدگاه هندسی:</strong> در مدل سه‌بعدی روبه‌رو بچرخانید تا ببینید چگونه مکعب بالا دقیقاً در گوشهٔ داخلی لایهٔ ۳ مکعبی قرار گرفته و شیب پله‌ای ۲ جهته را ایجاد کرده است.
+              </div>
+            </div>
+
+            <!-- Step 3 Pane -->
+            <div class="step-content-pane" id="s2-pane-3">
+              <div class="code-math-box highlight-amber" style="margin-top: 0.2rem; padding: 0.55rem 0.85rem; text-align: right; direction: rtl !important;">
+                <div style="font-size: 0.95rem; font-weight: 800; color: #78350f; margin-bottom: 0.25rem;">
+                  گام ۳: سازه ۳-پله‌ای ($S_3$) — هرم ۱۰ مکعبی (شکل روی تخته استاد)
+                </div>
+                <p style="font-size: 0.86rem; line-height: 1.65; color: #78350f; margin: 0;">
+                  دقیقاً همان شکل روی تخته در تصویر! با افزودن طبقه سوم شامل ۶ مکعب ($T_3 = 6$) به زیر لایه‌های قبلی:
+                </p>
+                <div class="math-tex math-block" data-tex="S_3 = 1 + 3 + 6 = 10 = \frac{3 \times 4 \times 5}{6}"></div>
+              </div>
+
+              <!-- Spec Table -->
+              <table class="edu-spec-table">
+                <thead>
+                  <tr>
+                    <th>طبقات هرم ۳-پله‌ای</th>
+                    <th>تعداد مکعب</th>
+                    <th>فرمول طبقه (اعداد مثلثی)</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><strong>طبقه ۱ (قله)</strong></td>
+                    <td>۱ مکعب</td>
+                    <td><span dir="ltr">T₁ = (1 × 2) / 2 = 1</span></td>
+                  </tr>
+                  <tr>
+                    <td><strong>طبقه ۲ (میانی)</strong></td>
+                    <td>۳ مکعب</td>
+                    <td><span dir="ltr">T₂ = (2 × 3) / 2 = 3</span></td>
+                  </tr>
+                  <tr>
+                    <td><strong>طبقه ۳ (پایه و کف)</strong></td>
+                    <td>۶ مکعب</td>
+                    <td><span dir="ltr">T₃ = (3 × 4) / 2 = 6</span></td>
+                  </tr>
+                  <tr>
+                    <td><strong>مجموع کل مکعب‌ها</strong></td>
+                    <td><strong>۱۰ مکعب</strong></td>
+                    <td><strong>کل هرم اقدس در مسئله ۱۲ کتاب تکمیلی!</strong></td>
+                  </tr>
+                </tbody>
+              </table>
+
+            </div>
+
+            <!-- Step 4 Pane -->
+            <div class="step-content-pane" id="s2-pane-4">
+              <div class="code-math-box" style="margin-top: 0.2rem; padding: 0.55rem 0.85rem; text-align: right; direction: rtl !important; background: #fff1f2; border: 1px solid #fecdd3;">
+                <div style="font-size: 0.95rem; font-weight: 800; color: #be123c; margin-bottom: 0.25rem;">
+                  گام ۴: سازه ۴-پله‌ای ($S_4$) — هرم کامل چهار لایه (۲۰ مکعب)
+                </div>
+                <p style="font-size: 0.86rem; line-height: 1.65; color: #be123c; margin: 0;">
+                  با افزودن طبقه چهارم شامل ۱۰ مکعب ($T_4 = 10$) به عنوان پی و شالودهٔ کل سازه:
+                </p>
+                <div class="math-tex math-block" data-tex="S_4 = 1 + 3 + 6 + 10 = 20 = \frac{4 \times 5 \times 6}{6}"></div>
+              </div>
+
+              <!-- Spec Table -->
+              <table class="edu-spec-table">
+                <thead>
+                  <tr>
+                    <th>شاخص هندسی</th>
+                    <th>مقدار عددی</th>
+                    <th>توضیح مفهومی</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><strong>تعداد طبقات</strong></td>
+                    <td><span dir="ltr">۴</span> طبقه</td>
+                    <td>چهار پلهٔ فضایی از رأس تا کف</td>
+                  </tr>
+                  <tr>
+                    <td><strong>تعداد مکعب لایه آخر (کف)</strong></td>
+                    <td><span dir="ltr">T₄ = ۱۰</span> مکعب</td>
+                    <td>بزرگ‌ترین لایهٔ مثلثی در کف سازه</td>
+                  </tr>
+                  <tr>
+                    <td><strong>مجموع کل مکعب‌ها</strong></td>
+                    <td><span dir="ltr">S₄ = ۲۰</span> مکعب</td>
+                    <td>چهارمین جمله دنباله الگوی اقدس</td>
+                  </tr>
+                </tbody>
+              </table>
+
+              <div class="edu-insight-card" style="border-right-color: #be123c;">
+                <strong>تحلیل جملات دنباله:</strong> جملات دنباله هرم‌ها $1, 4, 10, 20, 35, 56, \dots$ هستند. تفاضل جملات متوالی برابر با اعداد مثلثی است: $4-1=3$ ، $10-4=6$ ، $20-10=10$ !
+              </div>
+            </div>
+
+            <!-- Step 5 Pane -->
+            <div class="step-content-pane" id="s2-pane-5">
+              <div class="code-math-box highlight-blue" style="margin-top: 0.2rem; padding: 0.55rem 0.85rem; text-align: right; direction: rtl !important;">
+                <div style="font-size: 0.95rem; font-weight: 800; color: #0369a1; margin-bottom: 0.25rem;">
+                  گام ۵: تفکیک طبقات (Exploded Layers) — مشاهده مجزای اعداد مثلثی
+                </div>
+                <p style="font-size: 0.86rem; line-height: 1.65; color: #0369a1; margin: 0;">
+                  با باز شدن عمودی طبقات در مدل سه‌بعدی، راز شکل‌گیری هر پله کاملاً عیان می‌شود: هر طبقه خودش یک <strong>عدد مثلثی</strong> است!
+                </p>
+                <div class="math-tex math-block" data-tex="\text{Layer } k: \quad T_k = \frac{k(k+1)}{2} \implies 1 \,,\, 3 \,,\, 6 \,,\, 10 \,,\, 15 \,,\, \dots"></div>
+              </div>
+
+              <!-- Spec Table -->
+              <table class="edu-spec-table">
+                <thead>
+                  <tr>
+                    <th>رنگ طبقه در مدل ۳D</th>
+                    <th>تعداد مکعب</th>
+                    <th>آرایش هندسی لایه</th>
+                    <th>فرمول هر پله (روی تخته)</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><span style="display:inline-block; width:12px; height:12px; background:#0284c7; border-radius:3px; margin-left:4px;"></span> <strong>آبی آسمانی (طبقه ۱)</strong></td>
+                    <td>۱ مکعب</td>
+                    <td>تک‌مکعب قله</td>
+                    <td><span dir="ltr">1(2)/2 = 1</span></td>
+                  </tr>
+                  <tr>
+                    <td><span style="display:inline-block; width:12px; height:12px; background:#059669; border-radius:3px; margin-left:4px;"></span> <strong>سبز زمردی (طبقه ۲)</strong></td>
+                    <td>۳ مکعب</td>
+                    <td>مثلث گوشه‌ای ۲×۲</td>
+                    <td><span dir="ltr">2(3)/2 = 3</span></td>
+                  </tr>
+                  <tr>
+                    <td><span style="display:inline-block; width:12px; height:12px; background:#d97706; border-radius:3px; margin-left:4px;"></span> <strong>کهربایی (طبقه ۳)</strong></td>
+                    <td>۶ مکعب</td>
+                    <td>مثلث گوشه‌ای ۳×۳</td>
+                    <td><span dir="ltr">3(4)/2 = 6</span></td>
+                  </tr>
+                  <tr>
+                    <td><span style="display:inline-block; width:12px; height:12px; background:#6366f1; border-radius:3px; margin-left:4px;"></span> <strong>نیلی (طبقه ۴)</strong></td>
+                    <td>۱۰ مکعب</td>
+                    <td>مثلث گوشه‌ای ۴×۴</td>
+                    <td><span dir="ltr">4(5)/2 = 10</span></td>
+                  </tr>
+                </tbody>
+              </table>
+
+              <div class="edu-insight-card">
+                <strong>مشاهده مستقیم در پنجره ۳D:</strong> در مدل روبه‌رو ببینید که هر طبقه معلق، یک شبکهٔ مثلثی کامل است و فرمول هر جمله دنباله که روی تخته استاد نوشته شده ($\frac{n(n+1)}{2}$)، دقیقاً تعداد مکعب‌های هر طبقه را می‌شمارد.
+              </div>
+            </div>
+
+            <!-- Step 6 Pane -->
+            <div class="step-content-pane" id="s2-pane-6">
+              <div class="code-math-box highlight-emerald" style="margin-top: 0.2rem; padding: 0.55rem 0.85rem; text-align: right; direction: rtl !important;">
+                <div style="font-size: 0.95rem; font-weight: 800; color: #047857; margin-bottom: 0.25rem;">
+                  گام ۶: فرمول مجموع کل سازه $n$-پله‌ای و پیوند مستقیم به مسئله ۱۲ اقدس
+                </div>
+                <p style="font-size: 0.86rem; line-height: 1.65; color: #047857; margin: 0;">
+                  تعداد کل مکعب‌های سازه $n$-پله‌ای حاصل جمع اعداد مثلثی است و از فرمول تتراهدرال (اعداد هرمی) به دست می‌آید:
+                </p>
+                <div class="math-tex math-block" data-tex="S_n = T_1 + T_2 + \dots + T_n = \frac{n(n+1)(n+2)}{6}"></div>
+              </div>
+
+              <!-- Spec Table -->
+              <table class="edu-spec-table">
+                <thead>
+                  <tr>
+                    <th>تعداد پله ($n$)</th>
+                    <th>جمع مکعب‌های طبقات</th>
+                    <th>مجموع کل مکعب‌ها ($S_n$)</th>
+                    <th>نقش در مسئله ۱۲ کتاب تکمیلی</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><span dir="ltr">n = ۱</span></td>
+                    <td>۱</td>
+                    <td><span dir="ltr">S₁ = ۱</span></td>
+                    <td>جمله اول دنباله اقدس</td>
+                  </tr>
+                  <tr>
+                    <td><span dir="ltr">n = ۲</span></td>
+                    <td>۱ + ۳</td>
+                    <td><span dir="ltr">S₂ = ۴</span></td>
+                    <td>جمله دوم دنباله اقدس</td>
+                  </tr>
+                  <tr>
+                    <td><span dir="ltr">n = ۳</span></td>
+                    <td>۱ + ۳ + ۶</td>
+                    <td><span dir="ltr">S₃ = ۱۰</span></td>
+                    <td>جمله سوم دنباله اقدس (هرم ۳ طبقه‌ای)</td>
+                  </tr>
+                  <tr>
+                    <td><span dir="ltr">n = ۴</span></td>
+                    <td>۱ + ۳ + ۶ + ۱۰</td>
+                    <td><span dir="ltr">S₄ = ۲۰</span></td>
+                    <td>جمله چهارم دنباله اقدس</td>
+                  </tr>
+                  <tr>
+                    <td><span dir="ltr">n = ۵</span></td>
+                    <td>۲۰ + ۱۵</td>
+                    <td><span dir="ltr">S₅ = ۳۵</span></td>
+                    <td>جمله پنجم دنباله اقدس</td>
+                  </tr>
+                  <tr>
+                    <td><span dir="ltr">n = ۶</span></td>
+                    <td>۳۵ + ۲۱</td>
+                    <td><span dir="ltr">S₆ = ۵۶</span></td>
+                    <td>جمله ششم دنباله اقدس</td>
+                  </tr>
+                </tbody>
+              </table>
+
+              <div class="edu-insight-card" style="border-right-color: #059669;">
+                <strong>کشف طلایی برای حل مسئله اقدس:</strong> حالا متوجه شدیم که اعداد داده شده به اقدس در مسئله ۱۲ ($1, 4, 10, 20, 35, 56, \dots$) چیزی نیستند جز <strong>تعداد کل مکعب‌های سازه‌های ۱، ۲، ۳، ۴، ۵ و ۶ پله‌ای!</strong> و در اسلاید بعدی می‌بینیم اقدس چگونه می‌خواهد مجموع ۴۱ تا از این سازه‌ها را محاسبه کند.
+              </div>
+            </div>
+
+          </div>
+
+          <!-- Left Column: 3D Interactive Stepped Pyramid Visualizer -->
+          <div class="viewport-cad-container">
+            <div class="cad-header-tag">
+              <i data-lucide="layers"></i>
+              <span id="s2-cad-header-title">مدل سه‌بعدی تعاملی سازه پله‌ای و تفکیک لایه‌ها</span>
+            </div>
+
+            <div class="viewport-webgl-canvas" id="canvas-target-pelleh"></div>
+
+            <div class="cad-floating-toolbar">
+              <button class="cad-tool-button" id="s2-rotate-btn" title="تغییر وضعیت چرخش خودکار">
+                <i data-lucide="play"></i>
+                <span>چرخش</span>
+              </button>
+              <button class="cad-tool-button" id="s2-reset-btn" title="بازنشانی زاویه دید دوربین">
+                <i data-lucide="rotate-ccw"></i>
+                <span>ریست</span>
+              </button>
+            </div>
+
+            <div class="cad-dock-controls">
+              <span class="cad-dock-label" style="font-size: 0.82rem; font-weight: 700;">
+                <i data-lucide="eye"></i>
+                <span>حالت تجسم:</span>
+              </span>
+              <div class="cad-btn-group" id="s2-cad-btn-group">
+                <button class="cad-mode-chip active" data-step="1">۱ پله (۱)</button>
+                <button class="cad-mode-chip" data-step="2">۲ پله (۴)</button>
+                <button class="cad-mode-chip" data-step="3">۳ پله (۱۰)</button>
+                <button class="cad-mode-chip" data-step="4">۴ پله (۲۰)</button>
+                <button class="cad-mode-chip" data-step="5">تفکیک طبقات</button>
+                <button class="cad-mode-chip" data-step="6">فرمول کل سازه</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ================= SLIDE 3: THE PROBLEM (CHALLENGE) ================= -->
+      <section class="geist-slide slide-item" id="slide-3">
+        <div class="slide-intro-header">
+          <span class="badge-shadcn">
+            <i data-lucide="file-text"></i>
+            <span>طرح مسئله رسمی کتاب تکمیلی</span>
+          </span>
+          <h2 class="slide-main-title">مسئله ۱۲: محاسبه مجموع ۴۱ جمله از الگوی هرمی</h2>
+          <p class="slide-sub-desc">تحلیل الگوی اعداد چهاروجهی (تترائدرال) و محاسبه مجموع با استفاده از تقارن هندسی هرم‌ها.</p>
+        </div>
+
+        <div class="geist-grid-2">
+          <!-- Right Card: Problem Text -->
+          <div class="card-shadcn">
+            <span class="corner-cross tl">+</span><span class="corner-cross tr">+</span><span class="corner-cross bl">+</span><span class="corner-cross br">+</span>
+            <div class="card-shadcn-header">
+              <span class="card-shadcn-title">
+                <i data-lucide="help-circle"></i>
+                <span>متن رسمی مسئله ۱۲</span>
+              </span>
+              <span class="feature-mono-tag">فصل دوم — کتاب تکمیلی</span>
+            </div>
+
+            <p style="font-size: 1.05rem; line-height: 1.8; color: var(--foreground);">
+              اقدس می‌خواست <strong>چهل و یک عدد</strong> موجود در الگوی عددی زیر را با هم جمع بزند:
+            </p>
+
+            <div class="code-math-box" style="margin: 0.85rem 0;">
+              <span class="math-tex math-block" data-tex="1,\, 4,\, 10,\, 20,\, 35,\, 56,\, 84,\, 120,\, \dots,\, 12341"></span>
+            </div>
+
+            <p style="font-size: 0.96rem; line-height: 1.65; color: var(--muted-foreground);">
+              او با روشی هندسی ابتدا حاصل <span class="math-tex" data-tex="1 + 4 + 10"></span> را به دست آورد تا در ادامه، مجموع کل این ۴۱ عدد را محاسبه کند.
+            </p>
+
+
+            <div class="code-math-box highlight-amber accordion-fragment fragment" style="margin-top: 0.55rem; margin-bottom: 0; text-align: right; direction: rtl !important;">
+              <div style="font-weight: 800; font-size: 0.92rem; color: #78350f; margin-bottom: 0.25rem;">پرسش‌های رسمی کتاب:</div>
+              <div style="font-size: 0.88rem; line-height: 1.65; color: #78350f;">
+                <strong>الف)</strong> روش حل اقدس را شرح دهید.<br>
+                <strong>ب)</strong> با استفاده از روش اقدس، حاصل جمع این ۴۱ عدد چقدر می‌شود؟
+              </div>
+            </div>
+          </div>
+
+          <!-- Left Card: Nature of Numbers & Layers -->
+          <div class="card-shadcn">
+            <span class="corner-cross tl">+</span><span class="corner-cross tr">+</span><span class="corner-cross bl">+</span><span class="corner-cross br">+</span>
+            <div class="card-shadcn-header">
+              <span class="card-shadcn-title">
+                <i data-lucide="layers"></i>
+                <span>این اعداد دقیقاً چه چیزی را نشان می‌دهند؟</span>
+              </span>
+              <span class="feature-mono-tag" style="color: var(--highlight-blue);">اعداد تترائدرال (هرمی)</span>
+            </div>
+
+            <p style="font-size: 0.98rem; line-height: 1.65; color: var(--foreground);">
+              هر یک از این جملات، تعداد کل مکعب‌های واحد تشکیل‌دهنده یک هرم با قاعده مثلثی است:
+            </p>
+
+            <!-- Structured Step Breakdown: Animated Stacking Accordion! -->
+            <div class="step-breakdown-list">
+              <!-- Layer 1: Always Visible to eliminate empty card void -->
+              <div class="step-breakdown-row">
+                <div class="step-meta-right">
+                  <span class="step-num-circle">۱</span>
+                  <div class="step-text-wrap">
+                    <span class="step-title">هرم ۱ طبقه (قله)</span>
+                    <span class="step-sub">دارای ۱ مکعب در رأس</span>
+                  </div>
+                </div>
+                <div class="step-pyramid-preview" title="پیش‌نمایش هرم ۱ طبقه (۱ مکعب)">
+                  <img src="assets/images/pyramid-1.svg" alt="هرم ۱ طبقه" class="step-pyramid-img">
+                </div>
+                <div class="step-sum-badge" dir="ltr">
+                  <span class="math-tex" data-tex="1 = 1"></span>
+                  <span class="step-unit">مکعب</span>
+                </div>
+              </div>
+
+              <!-- Layer 2 -->
+              <div class="step-breakdown-row">
+                <div class="step-meta-right">
+                  <span class="step-num-circle">۲</span>
+                  <div class="step-text-wrap">
+                    <span class="step-title">هرم ۲ طبقه</span>
+                    <span class="step-sub">لایه‌ها: ۱ و ۳ مکعب</span>
+                  </div>
+                </div>
+                <div class="step-pyramid-preview" title="پیش‌نمایش هرم ۲ طبقه (۴ مکعب)">
+                  <img src="assets/images/pyramid-2.svg" alt="هرم ۲ طبقه" class="step-pyramid-img">
+                </div>
+                <div class="step-sum-badge" dir="ltr">
+                  <span class="math-tex" data-tex="1 + 3 = 4"></span>
+                  <span class="step-unit">مکعب</span>
+                </div>
+              </div>
+
+              <!-- Layer 3 -->
+              <div class="step-breakdown-row">
+                <div class="step-meta-right">
+                  <span class="step-num-circle">۳</span>
+                  <div class="step-text-wrap">
+                    <span class="step-title">هرم ۳ طبقه</span>
+                    <span class="step-sub">لایه‌ها: ۱، ۳ و ۶ مکعب</span>
+                  </div>
+                </div>
+                <div class="step-pyramid-preview" title="پیش‌نمایش هرم ۳ طبقه (۱۰ مکعب)">
+                  <img src="assets/images/pyramid-3.svg" alt="هرم ۳ طبقه" class="step-pyramid-img">
+                </div>
+                <div class="step-sum-badge" dir="ltr">
+                  <span class="math-tex" data-tex="1 + 3 + 6 = 10"></span>
+                  <span class="step-unit">مکعب</span>
+                </div>
+              </div>
+
+              <!-- Layer 4 -->
+              <div class="step-breakdown-row">
+                <div class="step-meta-right">
+                  <span class="step-num-circle">۴</span>
+                  <div class="step-text-wrap">
+                    <span class="step-title">هرم ۴ طبقه</span>
+                    <span class="step-sub">لایه‌ها: ۱، ۳، ۶ و ۱۰ مکعب</span>
+                  </div>
+                </div>
+                <div class="step-pyramid-preview" title="پیش‌نمایش هرم ۴ طبقه (۲۰ مکعب)">
+                  <img src="assets/images/pyramid-4.svg" alt="هرم ۴ طبقه" class="step-pyramid-img">
+                </div>
+                <div class="step-sum-badge" dir="ltr">
+                  <span class="math-tex" data-tex="1 + 3 + 6 + 10 = 20"></span>
+                  <span class="step-unit">مکعب</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="code-math-box highlight-emerald accordion-fragment fragment" style="margin-top: 0.75rem; margin-bottom: 0;">
+              <div style="font-size: 0.88rem; font-weight: 800; color: #047857; margin-bottom: 0.25rem;">تطبیق عدد پایانی الگو (۱۲۳۴۱):</div>
+              <div class="math-tex" data-tex="Te_{41} = \frac{41 \times 42 \times 43}{6} = 41 \times 7 \times 43 = \mathbf{12,341}"></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ================= SLIDE 4: DIMENSIONAL BRIDGE ================= -->
+      <section class="geist-slide slide-item" id="slide-4">
+        <div class="slide-intro-header">
+          <span class="badge-shadcn">
+            <i data-lucide="git-branch"></i>
+            <span>پل هندسی ابعاد</span>
+          </span>
+          <h2 class="slide-main-title">تحلیل ابعاد هندسی و تعداد کپی‌های متقارن</h2>
+          <p class="slide-sub-desc">بررسی ساختار هندسی در ابعاد ۱ و ۲ و دلیل ریاضی نیاز به ۴ کپی در بعد ۳ بر پایه رئوس چندوجهی‌ها.</p>
+        </div>
+
+        <div class="morph-accordion-deck">
+          <!-- 1D: Najmeh (Initially Expanded) -->
+          <div class="morph-accordion-card is-expanded" id="slide4-card-1" style="border-top: 4px solid var(--highlight-blue);">
+            <span class="corner-cross tl">+</span><span class="corner-cross tr">+</span><span class="corner-cross bl">+</span><span class="corner-cross br">+</span>
+            
+            <!-- Docked Strip (when collapsed) -->
+            <div class="morph-docked-strip">
+              <div class="docked-badge-icon" style="background: var(--highlight-blue);">۱D</div>
+              <div class="docked-vertical-title">بُعد ۱ — روش نجمه (گاوس)</div>
+              <div class="docked-expand-hint">کلیک ▾</div>
+            </div>
+
+            <!-- Full Expanded Content -->
+            <div class="morph-card-full-content">
+              <div class="card-shadcn-header">
+                <span class="card-shadcn-title">
+                  <i data-lucide="minus" style="color: var(--highlight-blue);"></i>
+                  <span>روش نجمه (گاوس)</span>
+                </span>
+                <span class="feature-mono-tag">بُعد ۱ — پاره‌خط</span>
+              </div>
+
+              <div class="morph-geom-badge">
+                <i data-lucide="info" style="color: var(--highlight-blue); width: 18px; height: 18px; flex-shrink: 0;"></i>
+                <span><strong>معماری هندسی:</strong> پاره‌خط دارای <strong>۲ رأس</strong> است (سر ۱ و سر $n$).</span>
+              </div>
+
+              <div class="code-math-box morph-formula-box">
+                <span class="math-tex math-block" data-tex="S_1 = 1 + 2 + 3 + \dots + n"></span>
+              </div>
+
+              <div class="morph-breakdown-list">
+                <div class="step-breakdown-row">
+                  <span>مجموع هر جفت سر و ته:</span>
+                  <span class="morph-row-val val-blue">$n+1$</span>
+                </div>
+                <div class="step-breakdown-row">
+                  <span>تعداد جفت‌ها در ۲ کپی:</span>
+                  <span class="morph-row-val val-blue">$n$ جفت</span>
+                </div>
+              </div>
+
+              <div class="code-math-box highlight-blue morph-highlight-box">
+                <div class="math-tex math-block" data-tex="2S_1 = n(n+1)"></div>
+                <div class="math-tex math-block" data-tex="S_1 = \frac{n(n+1)}{2}"></div>
+              </div>
+
+              <div class="morph-example-box example-blue">
+                <span class="morph-example-label">مثال برای ۹ جمله:</span>
+                <div class="morph-example-math">
+                  <span class="math-tex" data-tex="S_1 = \frac{9 \times 10}{2} = \mathbf{45}"></span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- 2D: Nooshin (Initially Collapsed Docked Strip) -->
+          <div class="morph-accordion-card is-collapsed" id="slide4-card-2" style="border-top: 4px solid var(--highlight-emerald);">
+            <span class="corner-cross tl">+</span><span class="corner-cross tr">+</span><span class="corner-cross bl">+</span><span class="corner-cross br">+</span>
+            
+            <!-- Docked Strip (when collapsed) -->
+            <div class="morph-docked-strip">
+              <div class="docked-badge-icon" style="background: var(--highlight-emerald);">۲D</div>
+              <div class="docked-vertical-title">بُعد ۲ — روش نوشین (مربع‌ها)</div>
+              <div class="docked-expand-hint">کلیک ▾</div>
+            </div>
+
+            <!-- Full Expanded Content -->
+            <div class="morph-card-full-content">
+              <div class="card-shadcn-header">
+                <span class="card-shadcn-title">
+                  <i data-lucide="triangle" style="color: var(--highlight-emerald);"></i>
+                  <span>روش نوشین (مربع‌ها)</span>
+                </span>
+                <span class="feature-mono-tag">بُعد ۲ — مثلث</span>
+              </div>
+
+              <div class="morph-geom-badge">
+                <i data-lucide="info" style="color: var(--highlight-emerald); width: 18px; height: 18px; flex-shrink: 0;"></i>
+                <span><strong>معماری هندسی:</strong> مثلث در صفحه دارای <strong>۳ رأس</strong> متقارن است.</span>
+              </div>
+
+              <div class="code-math-box morph-formula-box">
+                <span class="math-tex math-block" data-tex="S_2 = 1^2 + 2^2 + 3^2 + \dots + n^2"></span>
+              </div>
+
+              <div class="morph-breakdown-list">
+                <div class="step-breakdown-row">
+                  <span>مجموع هر خانه پس از ۳ دوران:</span>
+                  <span class="morph-row-val val-emerald">$2n+1$</span>
+                </div>
+                <div class="step-breakdown-row">
+                  <span>تعداد کل خانه‌ها در مثلث:</span>
+                  <span class="morph-row-val val-emerald">$T_n = \frac{n(n+1)}{2}$</span>
+                </div>
+              </div>
+
+              <div class="code-math-box highlight-emerald morph-highlight-box">
+                <div class="math-tex math-block" data-tex="3S_2 = (2n+1) \cdot T_n"></div>
+                <div class="math-tex math-block" data-tex="S_2 = \frac{n(n+1)(2n+1)}{6}"></div>
+              </div>
+
+              <div class="morph-example-box example-emerald">
+                <span class="morph-example-label">مثال برای ۵ جمله:</span>
+                <div class="morph-example-math">
+                  <span class="math-tex" data-tex="S_2 = \frac{5 \times 6 \times 11}{6} = \mathbf{55}"></span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- 3D: Aghdas (Initially Collapsed Docked Strip) -->
+          <div class="morph-accordion-card is-collapsed" id="slide4-card-3" style="border-top: 4px solid var(--highlight-amber);">
+            <span class="corner-cross tl">+</span><span class="corner-cross tr">+</span><span class="corner-cross bl">+</span><span class="corner-cross br">+</span>
+            
+            <!-- Docked Strip (when collapsed) -->
+            <div class="morph-docked-strip">
+              <div class="docked-badge-icon" style="background: var(--highlight-amber);">۳D</div>
+              <div class="docked-vertical-title">بُعد ۳ — روش اقدس (هرم)</div>
+              <div class="docked-expand-hint">کلیک ▾</div>
+            </div>
+
+            <!-- Full Expanded Content -->
+            <div class="morph-card-full-content">
+              <div class="card-shadcn-header">
+                <span class="card-shadcn-title">
+                  <i data-lucide="box" style="color: var(--highlight-amber);"></i>
+                  <span>روش اقدس (هرم)</span>
+                </span>
+                <span class="feature-mono-tag" style="color: var(--highlight-amber);">بُعد ۳ — چهاروجهی</span>
+              </div>
+
+              <div class="morph-geom-badge">
+                <i data-lucide="info" style="color: var(--highlight-amber); width: 18px; height: 18px; flex-shrink: 0;"></i>
+                <span><strong>معماری هندسی:</strong> هرم چهاروجهی در فضا دارای <strong>۴ رأس</strong> است.</span>
+              </div>
+
+              <div class="code-math-box morph-formula-box">
+                <span class="math-tex math-block" data-tex="S_3 = Te_1 + Te_2 + \dots + Te_n"></span>
+              </div>
+
+              <div class="morph-breakdown-list">
+                <div class="step-breakdown-row">
+                  <span>مجموع هر مکعب پس از ۴ کپی:</span>
+                  <span class="morph-row-val val-amber">$n+3$</span>
+                </div>
+                <div class="step-breakdown-row">
+                  <span>تعداد کل مکعب‌های هرم:</span>
+                  <span class="morph-row-val val-amber">$Te_n = \frac{n(n+1)(n+2)}{6}$</span>
+                </div>
+              </div>
+
+              <div class="code-math-box highlight-amber morph-highlight-box">
+                <span class="math-tex math-block" data-tex="4S_3 = (n+3) \cdot Te_n"></span>
+                <span class="math-tex math-block" data-tex="S_3 = \frac{n(n+1)(n+2)(n+3)}{24}"></span>
+              </div>
+
+              <div class="morph-example-box example-amber">
+                <span class="morph-example-label">مثال برای ۳ جمله:</span>
+                <div class="morph-example-math">
+                  <span class="math-tex" data-tex="S_3 = \frac{3 \times 4 \times 5 \times 6}{24} = \mathbf{15}"></span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ================= SLIDE 5: AGHDAS STEP 1 (SINGLE TETRAHEDRON 3D) ================= -->
+      <section class="geist-slide slide-item" id="slide-5">
+        <div class="slide-intro-header">
+          <span class="badge-shadcn">
+            <i data-lucide="box"></i>
+            <span>گام اول اقدس — چیدمان هرم مکعبی</span>
+          </span>
+          <h2 class="slide-main-title">تجزیه حاصل عبارت ۱۰ + ۴ + ۱ در فضا</h2>
+          <p class="slide-sub-desc">لایه‌بندی عبارات جبری و ساخت یک هرم مکعبی ۱۰ تایی (ماوس را بکشید تا دوربین بچرخد)</p>
+        </div>
+
+        <div class="geist-grid-2">
+          <!-- 3D Viewport -->
+          <div class="viewport-cad-container">
+            <div class="cad-header-tag">
+              <i data-lucide="box"></i>
+              <span>مدل سه‌بعدی هرم ۱۰ مکعبی اقدس</span>
+            </div>
+
+            <div class="viewport-webgl-canvas" id="canvas-target-single"></div>
+
+            <div class="cad-floating-toolbar">
+              <button class="cad-tool-button" id="s4-rotate-btn" title="تغییر وضعیت چرخش خودکار">
+                <i data-lucide="play"></i>
+                <span>چرخش</span>
+              </button>
+              <button class="cad-tool-button" id="s4-reset-btn" title="بازنشانی زاویه دید دوربین">
+                <i data-lucide="rotate-ccw"></i>
+                <span>ریست</span>
+              </button>
+            </div>
+
+            <div class="cad-dock-controls">
+              <div class="cad-slider-track">
+                <span class="cad-dock-label">
+                  <i data-lucide="layers"></i>
+                  <span>تفکیک لایه‌ها:</span>
+                </span>
+                <input type="range" min="0" max="1" step="0.02" value="0" class="shadcn-slider" id="s4-explode-slider">
+              </div>
+              <button class="btn-shadcn btn-shadcn-default" id="s4-explode-btn">
+                <i data-lucide="layers"></i>
+                <span>تفکیک لایه‌ها</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- Mathematical Analysis Card -->
+          <div class="card-shadcn">
+            <span class="corner-cross tl">+</span><span class="corner-cross tr">+</span><span class="corner-cross bl">+</span><span class="corner-cross br">+</span>
+            <div class="card-shadcn-header">
+              <span class="card-shadcn-title">
+                <i data-lucide="binary"></i>
+                <span>تفکیک لایه‌به‌لایه جملات</span>
+              </span>
+              <span class="feature-mono-tag">مجموع ۱۰ مکعب واحد</span>
+            </div>
+
+            <p style="font-size: 0.98rem; line-height: 1.7; color: var(--foreground);">
+              اقدس جملات عبارت را به مؤلفه‌های پایه‌ای شکست:
+            </p>
+
+            <div class="code-math-box" style="margin: 0.55rem 0;">
+              <span class="math-tex math-block" data-tex="1 = 1"></span>
+              <span class="math-tex math-block" data-tex="4 = 1 + 3 = 1 + (1+2)"></span>
+              <span class="math-tex math-block" data-tex="10 = 1 + 3 + 6 = 1 + (1+2) + (1+2+3)"></span>
+            </div>
+
+            <div class="code-math-box highlight-amber fragment" style="margin: 0.55rem 0; direction: rtl; text-align: right;">
+              <div style="font-size: 0.9rem; font-weight: 800; color: #78350f; margin-bottom: 0.35rem; direction: rtl; text-align: right;">شمارش فراوانی مقادیر:</div>
+              <div style="direction: ltr; text-align: center; margin: 0.4rem 0;">
+                <span class="math-tex math-block" data-tex="1 + 4 + 10 = \underbrace{1+\dots+1}_{6 \times 1} + \underbrace{2+2+2}_{3 \times 2} + \underbrace{3}_{1 \times 3} = 15"></span>
+              </div>
+              <div style="display: flex; justify-content: space-around; align-items: center; margin-top: 0.35rem; padding-top: 0.35rem; border-top: 1.5px dashed rgba(217, 119, 6, 0.35); font-size: 0.85rem; font-weight: 700; color: #92400e; direction: rtl;">
+                <span>۶ مکعب با عدد ۱ (کف)</span>
+                <span>۳ مکعب با عدد ۲ (میانی)</span>
+                <span>۱ مکعب با عدد ۳ (رأس)</span>
+              </div>
+            </div>
+
+            <div class="step-breakdown-list fragment" style="margin-top: 0.4rem;">
+              <div class="step-breakdown-row">
+                <div class="step-meta-right">
+                  <span class="step-num-circle" style="background: #d97706;">۳</span>
+                  <div class="step-text-wrap">
+                    <span class="step-title">طبقه ۱ (رأس بالا)</span>
+                    <span class="step-sub">۱ مکعب با عدد ۳</span>
+                  </div>
+                </div>
+                <div class="step-sum-badge">
+                  <strong>۱ مکعب</strong>
+                </div>
+              </div>
+
+              <div class="step-breakdown-row">
+                <div class="step-meta-right">
+                  <span class="step-num-circle" style="background: #059669;">۲</span>
+                  <div class="step-text-wrap">
+                    <span class="step-title">طبقه ۲ (میانی)</span>
+                    <span class="step-sub">۳ مکعب با عدد ۲</span>
+                  </div>
+                </div>
+                <div class="step-sum-badge">
+                  <strong>۳ مکعب</strong>
+                </div>
+              </div>
+
+              <div class="step-breakdown-row">
+                <div class="step-meta-right">
+                  <span class="step-num-circle" style="background: #0284c7;">۱</span>
+                  <div class="step-text-wrap">
+                    <span class="step-title">طبقه ۳ (کف هرم)</span>
+                    <span class="step-sub">۶ مکعب با عدد ۱</span>
+                  </div>
+                </div>
+                <div class="step-sum-badge">
+                  <strong>۶ مکعب</strong>
+                </div>
+              </div>
+            </div>
+
+            <div style="font-size: 0.85rem; color: var(--muted-foreground); margin-top: auto; padding-top: 0.65rem; border-top: 1.5px solid var(--border-subtle);">
+              کل مکعب‌ها: <span class="math-tex" data-tex="1 + 3 + 6 = 10"></span> مکعب. هرم نسبت به رأس بالا نامتعادل است!
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ================= SLIDE 6: AGHDAS STEP 2 (FOUR COPIES MERGE 3D) ================= -->
+      <section class="geist-slide slide-item" id="slide-6">
+        <div class="slide-intro-header">
+          <span class="badge-shadcn">
+            <i data-lucide="sparkles"></i>
+            <span>گام دوم — انطباق ۴ کپی فضایی</span>
+          </span>
+          <h2 class="slide-main-title">انطباق ۴ کپی فضایی و ایجاد حاصل‌جمع یکسان در همه موقعیت‌ها</h2>
+          <p class="slide-sub-desc">بررسی ۴ هرم با چرخش‌های متناظر در فضا و مشاهده انطباق هندسی برای رسیدن به ضریب مشترک ۶.</p>
+        </div>
+
+        <div class="geist-grid-2">
+          <!-- 3D 4-Copies Viewport -->
+          <div class="viewport-cad-container">
+            <div class="cad-header-tag">
+              <i data-lucide="copy"></i>
+              <span>مقایسه و ادغام ۴ کپی در فضا</span>
+            </div>
+
+            <div class="viewport-webgl-canvas" id="canvas-target-four"></div>
+
+            <div class="cad-floating-toolbar">
+              <button class="cad-tool-button" id="s5-rotate-btn" title="تغییر وضعیت چرخش خودکار">
+                <i data-lucide="play"></i>
+                <span>چرخش</span>
+              </button>
+              <button class="cad-tool-button" id="s5-reset-btn" title="بازنشانی زاویه دید دوربین">
+                <i data-lucide="rotate-ccw"></i>
+                <span>ریست</span>
+              </button>
+            </div>
+
+            <div class="cad-dock-controls">
+              <div class="cad-slider-track">
+                <span class="cad-dock-label">
+                  <i data-lucide="sliders"></i>
+                  <span>میزان ادغام:</span>
+                </span>
+                <input type="range" min="0" max="1" step="0.02" value="0" class="shadcn-slider" id="s5-merge-slider">
+              </div>
+              <button class="btn-shadcn btn-shadcn-default" id="s5-merge-btn">
+                <i data-lucide="sparkles"></i>
+                <span>ادغام ۴ کپی</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- Mathematical Proof Card -->
+          <div class="card-shadcn">
+            <span class="corner-cross tl">+</span><span class="corner-cross tr">+</span><span class="corner-cross bl">+</span><span class="corner-cross br">+</span>
+            
+            <div id="s5-status-banner" style="background: var(--secondary); border: 1.5px solid var(--border); border-radius: var(--radius-sm); padding: 0.65rem 0.95rem; text-align: center; margin-bottom: 0.75rem;">
+              <span style="font-size: 0.9rem; font-weight: 700; color: var(--foreground);">
+                ۴ هرم با ۴ رنگ مجزا در فضا — اسلایدر را بکشید تا ادغام و تشکیل عدد ۶ را ببینید
+              </span>
+            </div>
+
+            <div class="card-shadcn-header">
+              <span class="card-shadcn-title">
+                <i data-lucide="check-circle-2" style="color: var(--highlight-emerald);"></i>
+                <span>چرا در تمام مکعب‌ها جمع برابر ۶ می‌شود؟</span>
+              </span>
+            </div>
+
+            <p style="font-size: 0.95rem; line-height: 1.7; color: var(--foreground);">
+              هرم چهاروجهی دارای ۴ رأس است. رأس نوک‌تیز (۳) در هر کپی روی یکی از ۴ رأس قرار می‌گیرد:
+            </p>
+
+            <div class="step-breakdown-list">
+              <!-- Vertices Analysis: Always Visible to Anchor Content -->
+              <div class="step-breakdown-row">
+                <div class="step-meta-right">
+                  <span class="step-num-circle" style="background: var(--highlight-emerald);">✓</span>
+                  <div class="step-text-wrap">
+                    <span class="step-title">در ۴ رأس هرم</span>
+                    <span class="step-sub">یک دانه ۳ و سه تا ۱ روی هم می‌افتند:</span>
+                  </div>
+                </div>
+                <div class="step-sum-badge" dir="ltr">
+                  <span class="math-tex" data-tex="3 + 1 + 1 + 1 = 6" style="color: #059669; font-weight: 800;"></span>
+                </div>
+              </div>
+
+              <!-- Edges Analysis: Accordion Fragment -->
+              <div class="step-breakdown-row accordion-fragment fragment">
+                <div class="step-meta-right">
+                  <span class="step-num-circle" style="background: var(--highlight-emerald);">✓</span>
+                  <div class="step-text-wrap">
+                    <span class="step-title">در ۶ یال و بین مکعب‌ها</span>
+                    <span class="step-sub">دو تا ۲ و دو تا ۱ روی هم می‌افتند:</span>
+                  </div>
+                </div>
+                <div class="step-sum-badge" dir="ltr">
+                  <span class="math-tex" data-tex="2 + 2 + 1 + 1 = 6" style="color: #059669; font-weight: 800;"></span>
+                </div>
+              </div>
+            </div>
+
+            <div class="code-math-box highlight-emerald accordion-fragment fragment" style="margin-top: 0.65rem; text-align: right; direction: rtl !important;">
+              <div style="font-size: 0.88rem; font-weight: 800; color: #047857; margin-bottom: 0.35rem;">
+                محاسبه مجموع ۳ جملهٔ اول الگو: <span class="math-tex" data-tex="S = 1 + 4 + 10 = 15"></span>
+              </div>
+              <div class="math-tex math-block" data-tex="4 \times S = 6 \times 10 = 60 \implies S = \frac{6 \times 10}{4} = \mathbf{15}"></div>
+              <div class="math-tex math-block" data-tex="S_3 = \frac{3 \times 4 \times 5 \times 6}{24} = \mathbf{15}"></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ================= SLIDE 7: SOLVING 41 TERMS + CALCULATOR ================= -->
+      <section class="geist-slide slide-item" id="slide-7">
+        <div class="slide-intro-header">
+          <span class="badge-shadcn">
+            <i data-lucide="calculator"></i>
+            <span>حل بخش (ب) مسئله ۱۲</span>
+          </span>
+          <h2 class="slide-main-title">محاسبه مجموع چهل و یک جمله و فرمول تعمیم‌یافته</h2>
+          <p class="slide-sub-desc">ساده‌سازی جبری سریع و ماشین‌حساب زنده کلاسی برای ارزیابی هر n دلخواه</p>
+        </div>
+
+        <div class="geist-grid-2">
+          <!-- Left Card: Dynamic Algebraic Simplification & Strike-Through -->
+          <div class="card-shadcn" id="slide6-derivation-card">
+            <span class="corner-cross tl">+</span><span class="corner-cross tr">+</span><span class="corner-cross bl">+</span><span class="corner-cross br">+</span>
+            <div class="card-shadcn-header">
+              <span class="card-shadcn-title">
+                <i data-lucide="calculator"></i>
+                <span id="s6-card-title">ساده‌سازی جبری و خط‌زدن مرحله‌به‌مرحله</span>
+              </span>
+              <span class="feature-mono-tag font-yas" id="s6-n-tag" style="color: #d97706; font-size: 0.95rem;">۴۱ = n</span>
+            </div>
+
+            <div class="code-math-box" style="margin: 0.45rem 0;">
+              <span class="math-tex math-block" data-tex="S_n = \frac{n(n+1)(n+2)(n+3)}{24}"></span>
+            </div>
+
+            <div id="s6-step-container">
+              <!-- Dynamically populated by app.js with live strike-through visual fraction -->
+            </div>
+          </div>
+
+          <!-- Right Card: Live Calculator -->
+          <div class="card-shadcn">
+            <span class="corner-cross tl">+</span><span class="corner-cross tr">+</span><span class="corner-cross bl">+</span><span class="corner-cross br">+</span>
+            <div class="card-shadcn-header">
+              <span class="card-shadcn-title">
+                <i data-lucide="sliders" style="color: var(--highlight-blue);"></i>
+                <span>ماشین‌حساب زنده کلاسی</span>
+              </span>
+              <span class="feature-mono-tag" style="color: var(--highlight-blue);">پاسخ آنی</span>
+            </div>
+
+            <p style="font-size: 0.95rem; color: var(--muted-foreground); line-height: 1.6;">
+              هر مقداری برای <span class="math-tex" data-tex="n"></span> وارد کنید تا درجا محاسبه شود:
+            </p>
+
+            <div class="calc-input-box">
+              <label for="calc-input-n" style="font-weight: 800; font-size: 0.95rem;">مقدار n:</label>
+              <input type="text" inputmode="numeric" id="calc-input-n" class="shadcn-input font-yas-num" value="۴۱" maxlength="3" autocomplete="off">
+              <button class="btn-shadcn btn-shadcn-default" id="calc-trigger-btn">
+                <i data-lucide="play"></i>
+                <span>محاسبه آنی</span>
+              </button>
+            </div>
+
+            <div id="calc-output-container">
+              <!-- Default state for n=41 -->
+              <div style="display: flex; flex-direction: column; gap: 0.75rem;">
+                <div style="background: var(--secondary); border: 1.5px solid var(--border); border-radius: var(--radius-sm); padding: 0.85rem 1.15rem; display: flex; align-items: center; justify-content: space-between; gap: 1rem; flex-wrap: wrap;">
+                  <div>
+                    <div style="font-size: 0.85rem; color: var(--muted-foreground); font-weight: 700;">جملهٔ ۴۱ام الگوی اقدس (تعداد مکعب‌های هرم ۴۱):</div>
+                    <div style="font-size: 1.65rem; font-weight: 900; color: var(--foreground); font-family: 'Yas', sans-serif;">۱۲,۳۴۱</div>
+                  </div>
+                  <div class="code-math-box" style="margin: 0; padding: 0.4rem 0.85rem;">
+                    <span class="math-tex" data-tex="Te_{41} = \frac{41 \times 42 \times 43}{6} = 12341"></span>
+                  </div>
+                </div>
+
+                <div class="border-beam-box" style="background: var(--highlight-emerald-bg); border: 1.5px solid var(--highlight-emerald-border); border-radius: var(--radius-sm); padding: 0.95rem 1.15rem; display: flex; align-items: center; justify-content: space-between; gap: 1rem; flex-wrap: wrap; position: relative; overflow: hidden;">
+                  <div class="border-beam"></div>
+                  <div>
+                    <div style="font-size: 0.85rem; color: #047857; font-weight: 800;">مجموع ۴۱ جملهٔ اول (پاسخ نهایی):</div>
+                    <div id="calc-sum-counter" class="ticker-counter" style="font-size: 1.95rem; font-weight: 900; color: #047857; font-family: 'Yas', sans-serif;">۱۳۵,۷۵۱</div>
+                  </div>
+                  <div class="code-math-box highlight-emerald" style="margin: 0; padding: 0.4rem 0.85rem;">
+                    <span class="math-tex" data-tex="S_{41} = \frac{41 \times 42 \times 43 \times 44}{24} = 135751"></span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div id="s6-footer-summary" style="margin-top: auto; padding-top: 0.65rem; border-top: 1.5px solid var(--border-subtle); font-size: 0.88rem; color: var(--muted-foreground);">
+              مجموع ۴۱ جمله برابر با <strong>۱۳۵,۷۵۱</strong> است.
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ================= SLIDE 8: SIMPLEX DIMENSIONAL FAMILY (0D TO 4D 3D/4D CAD) ================= -->
+      <section class="geist-slide slide-item" id="slide-8">
+        <div class="slide-intro-header">
+          <span class="badge-shadcn">
+            <i data-lucide="compass"></i>
+            <span>تعمیم هندسی و فضایی سیمپلکس‌ها — مسئله ۱۳ کتاب تکمیلی</span>
+          </span>
+          <h2 class="slide-main-title">سیمپلکس‌ها از بُعد ۰ تا ۴ و قضیهٔ تقارن (d+1) کپی</h2>
+          <p class="slide-sub-desc">بررسی ساختار هندسی ساده‌ترین چندوجهی‌ها، تجسم استودیویی خانواده سیمپلکس‌ها و چرخش ۴ بعدی</p>
+        </div>
+
+        <div class="geist-grid-2">
+          <!-- Right Column: Interactive Step-by-Step Dimensional Stepper -->
+          <div class="card-shadcn">
+            <span class="corner-cross tl">+</span><span class="corner-cross tr">+</span><span class="corner-cross bl">+</span><span class="corner-cross br">+</span>
+
+            <!-- Dimension Stepper Toolbar -->
+            <div class="step-nav-bar" id="s8-step-navbar">
+              <button class="step-nav-btn" id="s8-prev-dim-btn" title="بُعد قبلی">
+                <i data-lucide="chevron-right"></i>
+                <span>بعد قبل</span>
+              </button>
+              <div class="step-indicator-badge">
+                <span id="s8-dim-title-badge">نمای خانواده کامل سیمپلکس‌ها</span>
+              </div>
+              <button class="step-nav-btn" id="s8-next-dim-btn" title="بُعد بعدی">
+                <span>بعد بعد</span>
+                <i data-lucide="chevron-left"></i>
+              </button>
+            </div>
+
+            <!-- Dimension Selector Pills -->
+            <div class="step-pill-tabs" id="s8-dim-tabs" style="margin: 0.4rem 0;">
+              <button class="step-pill-tab active" data-dim="all">خانواده کامل</button>
+              <button class="step-pill-tab" data-dim="0">۰D نقطه</button>
+              <button class="step-pill-tab" data-dim="1">۱D پاره‌خط</button>
+              <button class="step-pill-tab" data-dim="2">۲D مثلث</button>
+              <button class="step-pill-tab" data-dim="3">۳D چهاروجهی</button>
+              <button class="step-pill-tab" data-dim="4">۴D پنج‌خانه</button>
+            </div>
+
+            <!-- Pane: All Simplexes Overview -->
+            <div class="step-content-pane active" id="s8-pane-all">
+              <div class="code-math-box highlight-blue" style="margin-top: 0.2rem; padding: 0.65rem 0.95rem; text-align: right; direction: rtl !important;">
+                <div style="font-size: 0.98rem; font-weight: 800; color: #0369a1; margin-bottom: 0.35rem; display: flex; align-items: center; gap: 0.45rem;">
+                  <span class="badge" style="background: #0284c7; color: white; padding: 2px 8px; border-radius: 4px; font-size: 0.78rem;">مفهوم کلیدی</span>
+                  <span>سیمپلکس (<bdi dir="ltr">Simplex</bdi>) چیست؟ — تعمیم مفهوم مثلث به تمام ابعاد</span>
+                </div>
+                <p style="font-size: 0.88rem; line-height: 1.7; color: #0c4a6e; margin: 0 0 0.45rem 0;">
+                  سیمپلکس در هر بُعد <span class="math-tex" data-tex="d"></span>، ساده‌ترین شکل محدب برای احاطه کردن فضا است که دقیقاً با <strong><bdi dir="ltr"><span class="math-tex" data-tex="d+1"></span></bdi> رأس مستقل</strong> ساخته می‌شود:
+                </p>
+                <div class="simplex-formula-strip">
+                  <div class="simplex-formula-item">
+                    <span class="sfi-label">تعداد رأس‌ها در بُعد <span class="math-tex" data-tex="d"></span>:</span>
+                    <span class="sfi-badge math-tex" data-tex="d + 1"></span>
+                  </div>
+                  <div class="sfi-arrow">
+                    <i data-lucide="arrow-left"></i>
+                    <span>تقارن دوران</span>
+                  </div>
+                  <div class="simplex-formula-item">
+                    <span class="sfi-label">تعداد کپی‌های لازم:</span>
+                    <span class="sfi-badge math-tex" data-tex="d + 1"></span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Complete Dimensional Comparison Table -->
+              <table class="edu-spec-table">
+                <thead>
+                  <tr>
+                    <th>بُعد (d)</th>
+                    <th>نام سیمپلکس</th>
+                    <th>تعداد رأس</th>
+                    <th>کپی متقارن</th>
+                    <th>مخرج کسر</th>
+                    <th>فرمول مجموع</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><strong>۰D</strong></td>
+                    <td>نقطه تکین</td>
+                    <td><span dir="ltr">۱</span></td>
+                    <td>۱ کپی</td>
+                    <td><span dir="ltr">۱! = ۱</span></td>
+                    <td><span class="math-tex" data-tex="\frac{n}{1!} = \frac{n}{1} = n"></span></td>
+                  </tr>
+                  <tr>
+                    <td><strong>۱D</strong></td>
+                    <td>پاره‌خط راست</td>
+                    <td><span dir="ltr">۲</span></td>
+                    <td>۲ کپی (نجمه)</td>
+                    <td><span dir="ltr">۲! = ۲</span></td>
+                    <td><span class="math-tex" data-tex="\frac{n(n+1)}{2!} = \frac{n(n+1)}{2}"></span></td>
+                  </tr>
+                  <tr>
+                    <td><strong>۲D</strong></td>
+                    <td>مثلث متساوی‌الاضلاع</td>
+                    <td><span dir="ltr">۳</span></td>
+                    <td>۳ کپی (نوشین)</td>
+                    <td><span dir="ltr">۳! = ۶</span></td>
+                    <td><span class="math-tex" data-tex="\frac{n(n+1)(n+2)}{3!} = \frac{n(n+1)(n+2)}{6}"></span></td>
+                  </tr>
+                  <tr>
+                    <td><strong>۳D</strong></td>
+                    <td>چهاروجهی منتظم</td>
+                    <td><span dir="ltr">۴</span></td>
+                    <td>۴ کپی (اقدس)</td>
+                    <td><span dir="ltr">۴! = ۲۴</span></td>
+                    <td><span class="math-tex" data-tex="\frac{n(n+1)(n+2)(n+3)}{4!} = \frac{n(n+1)(n+2)(n+3)}{24}"></span></td>
+                  </tr>
+                  <tr>
+                    <td><strong>۴D</strong></td>
+                    <td>پنج‌خانه (Pentatope)</td>
+                    <td><span dir="ltr">۵</span></td>
+                    <td>۵ کپی فضایی</td>
+                    <td><span dir="ltr">۵! = ۱۲۰</span></td>
+                    <td><span class="math-tex" data-tex="\frac{n(n+1)(n+2)(n+3)(n+4)}{5!} = \frac{n\dots(n+4)}{120}"></span></td>
+                  </tr>
+                </tbody>
+              </table>
+
+              <div class="edu-insight-card">
+                <strong>قانون عام ابعاد در کتاب تکمیلی:</strong> در هر بُعد <span class="math-tex" data-tex="d"></span>، همواره به <bdi dir="ltr"><span class="math-tex" data-tex="d+1"></span></bdi> کپی متقارن برای پر کردن ابرمکعب نیاز داریم و مخرج کسر برابر فاکتوریل تعداد کپی‌ها یعنی <bdi dir="ltr"><span class="math-tex" data-tex="(d+1)!"></span></bdi> می‌شود.
+              </div>
+            </div>
+
+            <!-- Pane: 0D Point -->
+            <div class="step-content-pane" id="s8-pane-0">
+              <div class="code-math-box" style="margin-top: 0.2rem; padding: 0.55rem 0.85rem; text-align: right; direction: rtl !important; background: #f8fafc; border: 1.5px solid #cbd5e1;">
+                <div style="font-size: 0.95rem; font-weight: 800; color: #1e293b; margin-bottom: 0.25rem; display: flex; align-items: center; gap: 0.45rem;">
+                  <span class="badge" style="background: #e2e8f0; color: #334155; padding: 2px 7px; border-radius: 4px; font-size: 0.78rem;">بُعد صفر</span>
+                  <span>نقطه (<bdi dir="ltr">0-Simplex</bdi>) — نقطه تکین بدون بعد</span>
+                </div>
+                <p style="font-size: 0.86rem; line-height: 1.65; color: #334155; margin: 0 0 0.35rem 0;">
+                  نقطه، ابتدایی‌ترین واحد هندسی با ۱ رأس است. مجموع <span class="math-tex" data-tex="n"></span> نقطهٔ واحد (دنباله اعداد ۱) طبق الگوی کسرها:
+                </p>
+                <div class="math-tex math-block" data-tex="S_0 = 1 + 1 + 1 + \dots + 1 = \frac{n}{1!} = \frac{n}{1} = n"></div>
+              </div>
+
+              <table class="edu-spec-table">
+                <thead>
+                  <tr>
+                    <th>شاخص ساختاری</th>
+                    <th>مقدار</th>
+                    <th>تفسیر ریاضی</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><strong>تعداد رأس</strong></td>
+                    <td><span dir="ltr">۰ + ۱ = ۱</span></td>
+                    <td>تنها ۱ رأس دارد (در استودیوی سه‌بعدی با گوی سفید مشخص شده است)</td>
+                  </tr>
+                  <tr>
+                    <td><strong>تعداد یال و وجه</strong></td>
+                    <td><span dir="ltr">۰</span></td>
+                    <td>فاقد هرگونه لبه یا سطح</td>
+                  </tr>
+                  <tr>
+                    <td><strong>موقعیت در مثلث خیام</strong></td>
+                    <td><strong>ستون ۱</strong></td>
+                    <td>دنباله ثابت تماماً ۱ (<span class="math-tex" data-tex="1, 1, 1, 1, \dots"></span>)</td>
+                  </tr>
+                </tbody>
+              </table>
+
+              <div class="edu-insight-card" style="border-right-color: #64748b;">
+                <strong>شهود هندسی:</strong> برای پر کردن فضای صفر-بعدی، تنها به ۱ کپی از خودش نیاز است (<span class="math-tex" data-tex="1! = 1"></span>). نقطه واحد پایه‌ای است که با حرکت در فضا، ابعاد بالاتر را می‌سازد.
+              </div>
+            </div>
+
+            <!-- Pane: 1D Line -->
+            <div class="step-content-pane" id="s8-pane-1">
+              <div class="code-math-box highlight-blue" style="margin-top: 0.2rem; padding: 0.55rem 0.85rem; text-align: right; direction: rtl !important;">
+                <div style="font-size: 0.95rem; font-weight: 800; color: #0369a1; margin-bottom: 0.25rem; display: flex; align-items: center; gap: 0.45rem;">
+                  <span class="badge" style="background: rgba(3, 105, 161, 0.12); color: #0284c7; padding: 2px 7px; border-radius: 4px; font-size: 0.78rem;">بُعد یک</span>
+                  <span>پاره‌خط (<bdi dir="ltr">1-Simplex</bdi>) — روش نجمه در کتاب تکمیلی</span>
+                </div>
+                <p style="font-size: 0.86rem; line-height: 1.65; color: #0369a1; margin: 0 0 0.35rem 0;">
+                  پاره‌خطی محدود به ۲ رأس. متناظر با مجموع اعداد طبیعی ۱ تا <span class="math-tex" data-tex="n"></span> (روش تقارن مستطیلی نجمه):
+                </p>
+                <div class="math-tex math-block" data-tex="S_1 = 1 + 2 + 3 + \dots + n = \frac{n(n+1)}{2!} = \frac{n(n+1)}{2}"></div>
+              </div>
+
+              <table class="edu-spec-table">
+                <thead>
+                  <tr>
+                    <th>شاخص ساختاری</th>
+                    <th>مقدار</th>
+                    <th>تفسیر ریاضی</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><strong>تعداد رئوس</strong></td>
+                    <td><span dir="ltr">۱ + ۱ = ۲</span> رأس</td>
+                    <td>دو نقطه انتهایی پاره‌خط (قرمز در مدل سه‌بعدی)</td>
+                  </tr>
+                  <tr>
+                    <td><strong>تعداد کپی تقارن</strong></td>
+                    <td><strong>۲ کپی</strong></td>
+                    <td>روش نجمه: دو ردیف ۱ تا <span class="math-tex" data-tex="n"></span> به صورت معکوس روی هم قرار می‌گیرند</td>
+                  </tr>
+                  <tr>
+                    <td><strong>مخرج کسر</strong></td>
+                    <td><span dir="ltr">۲! = ۲</span></td>
+                    <td>مساحت مستطیل حاصل بر ۲ تقسیم می‌شود</td>
+                  </tr>
+                </tbody>
+              </table>
+
+              <div class="edu-insight-card">
+                <strong>ارتباط با نجمه در کتاب تکمیلی:</strong> نجمه برای محاسبه <span class="math-tex" data-tex="1 + 2 + \dots + n"></span>، اعداد را یک بار مستقیم و یک بار معکوس نوشت تا هر ستون جمعش <span class="math-tex" data-tex="n+1"></span> شود. این دقیقاً استفاده از تقارن ۲ کپی در بعد ۱ است!
+              </div>
+            </div>
+
+            <!-- Pane: 2D Triangle -->
+            <div class="step-content-pane" id="s8-pane-2">
+              <div class="code-math-box highlight-emerald" style="margin-top: 0.2rem; padding: 0.55rem 0.85rem; text-align: right; direction: rtl !important;">
+                <div style="font-size: 0.95rem; font-weight: 800; color: #047857; margin-bottom: 0.25rem; display: flex; align-items: center; gap: 0.45rem;">
+                  <span class="badge" style="background: rgba(5, 150, 105, 0.12); color: #059669; padding: 2px 7px; border-radius: 4px; font-size: 0.78rem;">بُعد دو</span>
+                  <span>مثلث (<bdi dir="ltr">2-Simplex</bdi>) — روش نوشین در کتاب تکمیلی</span>
+                </div>
+                <p style="font-size: 0.86rem; line-height: 1.65; color: #047857; margin: 0 0 0.35rem 0;">
+                  ساده‌ترین چندضلعی صفحه با ۳ رأس. متناظر با مجموع اعداد مثلثی (روش تقارن متوازی‌السطوح نوشین):
+                </p>
+                <div class="math-tex math-block" data-tex="S_2 = T_1 + T_2 + \dots + T_n = \frac{n(n+1)(n+2)}{3!} = \frac{n(n+1)(n+2)}{6}"></div>
+              </div>
+
+              <table class="edu-spec-table">
+                <thead>
+                  <tr>
+                    <th>شاخص ساختاری</th>
+                    <th>مقدار</th>
+                    <th>تفسیر ریاضی</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><strong>تعداد رئوس</strong></td>
+                    <td><span dir="ltr">۲ + ۱ = ۳</span> رأس</td>
+                    <td>سه گوشه متساوی‌الاضلاع (کروی قرمز با لبه‌های شیشه‌ای)</td>
+                  </tr>
+                  <tr>
+                    <td><strong>تعداد کپی تقارن</strong></td>
+                    <td><strong>۳ کپی</strong></td>
+                    <td>روش نوشین: ۳ نسخه از مثلث با دوران‌های ۱۲۰ درجه جفت می‌شوند</td>
+                  </tr>
+                  <tr>
+                    <td><strong>مخرج کسر</strong></td>
+                    <td><span dir="ltr">۳! = ۶</span></td>
+                    <td>یک مکعب سه‌بعدی را می‌توان به ۶ چهاروجهی معادل تجزیه کرد</td>
+                  </tr>
+                </tbody>
+              </table>
+
+              <div class="edu-insight-card" style="border-right-color: #059669;">
+                <strong>ارتباط با روش نوشین:</strong> نوشین با ۳ کپی چرخیده از هرم مثلثی نشان داد که حجم متوازی‌السطوح کامل می‌شود. مخرج ۶ از ضرب ۳ کپی در تقارن‌های انعکاسی صفحه حاصل می‌شود.
+              </div>
+            </div>
+
+            <!-- Pane: 3D Tetrahedron -->
+            <div class="step-content-pane" id="s8-pane-3">
+              <div class="code-math-box highlight-amber" style="margin-top: 0.2rem; padding: 0.55rem 0.85rem; text-align: right; direction: rtl !important;">
+                <div style="font-size: 0.95rem; font-weight: 800; color: #78350f; margin-bottom: 0.25rem; display: flex; align-items: center; gap: 0.45rem;">
+                  <span class="badge" style="background: rgba(217, 119, 6, 0.15); color: #b45309; padding: 2px 7px; border-radius: 4px; font-size: 0.78rem;">بُعد سه</span>
+                  <span>چهاروجهی منتظم (<bdi dir="ltr">3-Simplex</bdi>) — روش اقدس در مسئله ۱۲ کتاب تکمیلی</span>
+                </div>
+                <p style="font-size: 0.86rem; line-height: 1.65; color: #78350f; margin: 0 0 0.35rem 0;">
+                  هرم منتظم با ۴ وجه مثلثی و ۴ رأس. متناظر دقیق با حجم مکعب مستطیل اقدس حاصل از ۴ کپی متقارن:
+                </p>
+                <div class="math-tex math-block" data-tex="S_3 = \text{هرم اقدس} = \frac{n(n+1)(n+2)(n+3)}{4!} = \frac{n(n+1)(n+2)(n+3)}{24}"></div>
+              </div>
+
+              <table class="edu-spec-table">
+                <thead>
+                  <tr>
+                    <th>شاخص ساختاری</th>
+                    <th>مقدار</th>
+                    <th>تفسیر ریاضی</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><strong>تعداد رئوس</strong></td>
+                    <td><span dir="ltr">۳ + ۱ = ۴</span> رأس</td>
+                    <td>چهار گوشه سه‌بعدی با زوایای فضایی متساوی</td>
+                  </tr>
+                  <tr>
+                    <td><strong>تعداد کپی تقارن</strong></td>
+                    <td><strong>۴ کپی (اقدس)</strong></td>
+                    <td>روش حل اقدس: ۴ هرم یکسان طوری کنار هم می‌نشینند که مکعب را پر کنند</td>
+                  </tr>
+                  <tr>
+                    <td><strong>مخرج کسر</strong></td>
+                    <td><span dir="ltr">۴! = ۲۴</span></td>
+                    <td>تعداد جایگشت‌های ۴ رأس چهاروجهی برابر ۲۴ است</td>
+                  </tr>
+                </tbody>
+              </table>
+
+              <div class="edu-insight-card" style="border-right-color: #d97706;">
+                <strong>شاه‌کلید مسئله اقدس:</strong> چرا اقدس ۴ کپی ساخت؟ چون چهاروجهی ۴ رأس دارد! هر کپی یکی از رأس‌های نوک‌تیز را به یکی از گوشه‌های مکعب مستطیل می‌فرستد تا فضای خالی صفر شود.
+              </div>
+            </div>
+
+            <!-- Pane: 4D Pentatope -->
+            <div class="step-content-pane" id="s8-pane-4">
+              <div class="code-math-box" style="margin-top: 0.2rem; padding: 0.55rem 0.85rem; text-align: right; direction: rtl !important; background: #faf5ff; border: 1.5px solid #d8b4fe;">
+                <div style="font-size: 0.95rem; font-weight: 800; color: #6b21a8; margin-bottom: 0.25rem; display: flex; align-items: center; gap: 0.45rem;">
+                  <span class="badge" style="background: rgba(147, 51, 234, 0.12); color: #9333ea; padding: 2px 7px; border-radius: 4px; font-size: 0.78rem;">بُعد چهار</span>
+                  <span>پنج‌خانه (<bdi dir="ltr">4-Simplex / Pentatope</bdi>) — مسئله ۱۳ کتاب تکمیلی</span>
+                </div>
+                <p style="font-size: 0.86rem; line-height: 1.65; color: #6b21a8; margin: 0 0 0.35rem 0;">
+                  ساده‌ترین جسم در فضای ۴ بعدی با ۵ رأس. تعمیم مستقیم روش اقدس با ۵ کپی متقارن در ابرمکعب:
+                </p>
+                <div class="math-tex math-block" data-tex="S_4 = \frac{n(n+1)(n+2)(n+3)(n+4)}{5!} = \frac{n(n+1)(n+2)(n+3)(n+4)}{120}"></div>
+              </div>
+
+              <table class="edu-spec-table">
+                <thead>
+                  <tr>
+                    <th>شاخص ساختاری</th>
+                    <th>مقدار</th>
+                    <th>تفسیر ریاضی</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><strong>تعداد رئوس</strong></td>
+                    <td><span dir="ltr">۴ + ۱ = ۵</span> رأس</td>
+                    <td>پنج رأس در فضای چهاربعدی (<span class="math-tex" data-tex="\mathbb{R}^4"></span>)</td>
+                  </tr>
+                  <tr>
+                    <td><strong>تعداد کپی تقارن</strong></td>
+                    <td><strong>۵ کپی فضایی</strong></td>
+                    <td>۵ نسخه از ۴-سیمپلکس برای پر کردن ابرمکعب ۴ بعدی</td>
+                  </tr>
+                  <tr>
+                    <td><strong>مخرج کسر</strong></td>
+                    <td><span dir="ltr">۵! = ۱۲۰</span></td>
+                    <td>فاکتوریل ۵ برای تصحیح شمارش‌های مکرر تقارن‌های ۴ بعدی</td>
+                  </tr>
+                </tbody>
+              </table>
+
+              <div class="edu-insight-card" style="border-right-color: #9333ea;">
+                <strong>چرخش زنده ۴D در کادر روبه‌رو:</strong> آنچه در مدل متحرک روبه‌رو می‌بینید، تصویر استریوگرافیک چرخش یک پنج‌خانه چهاربعدی حول دو صفحه متعامد X-W و Y-Z در فضای سه‌بعدی ماست!
+              </div>
+            </div>
+
+          </div>
+
+          <!-- Left Column: Interactive 3D Simplex Studio CAD Viewport -->
+          <div class="viewport-cad-container">
+            <div class="cad-header-tag">
+              <i data-lucide="shapes"></i>
+              <span id="s8-cad-title">استودیوی سه‌بعدی خانواده سیمپلکس‌ها (0D تا 3D)</span>
+            </div>
+
+            <div class="viewport-webgl-canvas" id="canvas-target-simplex"></div>
+
+            <div class="cad-floating-toolbar">
+              <button class="cad-tool-button active" id="s8-rotate-btn" title="تغییر وضعیت چرخش خودکار">
+                <i data-lucide="pause"></i>
+                <span>توقف</span>
+              </button>
+              <button class="cad-tool-button" id="s8-reset-btn" title="بازنشانی زاویه دید دوربین">
+                <i data-lucide="rotate-ccw"></i>
+                <span>ریست</span>
+              </button>
+            </div>
+
+            <div class="cad-dock-controls">
+              <span class="cad-dock-label" style="font-size: 0.82rem; font-weight: 700;">
+                <i data-lucide="layers"></i>
+                <span>زاویه دید و بُعد:</span>
+              </span>
+              <div class="cad-btn-group" id="s8-cad-btn-group">
+                <button class="cad-mode-chip active" data-dim="all">همه ابعاد</button>
+                <button class="cad-mode-chip" data-dim="0">۰D نقطه</button>
+                <button class="cad-mode-chip" data-dim="1">۱D پاره‌خط</button>
+                <button class="cad-mode-chip" data-dim="2">۲D مثلث</button>
+                <button class="cad-mode-chip" data-dim="3">۳D چهاروجهی</button>
+                <button class="cad-mode-chip" data-dim="4">۴D پنج‌خانه</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ================= SLIDE 9: KHAYYAM-PASCAL & 4TH DIMENSION ================= -->
+      <section class="geist-slide slide-item" id="slide-9">
+        <div class="slide-intro-header">
+          <span class="badge-shadcn">
+            <i data-lucide="grid"></i>
+            <span>مسئله ۱۳ کتاب تکمیلی — تعمیم الگو</span>
+          </span>
+          <h2 class="slide-main-title">ارتباط با مثلث خیام-پاسکال و تعمیم به ابعاد بالاتر</h2>
+          <p class="slide-sub-desc">بررسی قطرهای مثلث خیام-پاسکال و انطباق آن با اعداد چندپله‌ای و هرمی در ابعاد مختلف</p>
+        </div>
+
+        <div class="geist-grid-2">
+          <!-- Left: Khayyam Interactive Tree -->
+          <div class="card-shadcn" style="align-items: center;">
+            <span class="corner-cross tl">+</span><span class="corner-cross tr">+</span><span class="corner-cross bl">+</span><span class="corner-cross br">+</span>
+            
+            <div class="shadcn-tabs-bar" style="margin-bottom: 0.75rem;">
+              <button class="shadcn-tab-trigger active btn-khayyam-filter" data-dim="all">همه ستون‌ها</button>
+              <button class="shadcn-tab-trigger btn-khayyam-filter" data-dim="dim-1">۱D (نجمه)</button>
+              <button class="shadcn-tab-trigger btn-khayyam-filter" data-dim="dim-2">۲D (نوشین)</button>
+              <button class="shadcn-tab-trigger btn-khayyam-filter" data-dim="dim-3">۳D (اقدس)</button>
+              <button class="shadcn-tab-trigger btn-khayyam-filter" data-dim="dim-4">۴D (۵ کپی)</button>
+            </div>
+
+            <div class="khayyam-matrix-grid">
+              <div class="khayyam-row-wrap">
+                <div class="khayyam-cell-node dim-0">۱</div>
+              </div>
+              <div class="khayyam-row-wrap">
+                <div class="khayyam-cell-node dim-0">۱</div>
+                <div class="khayyam-cell-node dim-1">۱</div>
+              </div>
+              <div class="khayyam-row-wrap">
+                <div class="khayyam-cell-node dim-0">۱</div>
+                <div class="khayyam-cell-node dim-1">۲</div>
+                <div class="khayyam-cell-node dim-2">۱</div>
+              </div>
+              <div class="khayyam-row-wrap">
+                <div class="khayyam-cell-node dim-0">۱</div>
+                <div class="khayyam-cell-node dim-1">۳</div>
+                <div class="khayyam-cell-node dim-2">۳</div>
+                <div class="khayyam-cell-node dim-3">۱</div>
+              </div>
+              <div class="khayyam-row-wrap">
+                <div class="khayyam-cell-node dim-0">۱</div>
+                <div class="khayyam-cell-node dim-1">۴</div>
+                <div class="khayyam-cell-node dim-2">۶</div>
+                <div class="khayyam-cell-node dim-3">۴</div>
+                <div class="khayyam-cell-node dim-4">۱</div>
+              </div>
+              <div class="khayyam-row-wrap">
+                <div class="khayyam-cell-node dim-0">۱</div>
+                <div class="khayyam-cell-node dim-1">۵</div>
+                <div class="khayyam-cell-node dim-2">۱۰</div>
+                <div class="khayyam-cell-node dim-3">۱۰</div>
+                <div class="khayyam-cell-node dim-4">۵</div>
+                <div class="khayyam-cell-node">۱</div>
+              </div>
+              <div class="khayyam-row-wrap">
+                <div class="khayyam-cell-node dim-0">۱</div>
+                <div class="khayyam-cell-node dim-1">۶</div>
+                <div class="khayyam-cell-node dim-2">۱۵</div>
+                <div class="khayyam-cell-node dim-3">۲۰</div>
+                <div class="khayyam-cell-node dim-4">۱۵</div>
+                <div class="khayyam-cell-node">۶</div>
+                <div class="khayyam-cell-node">۱</div>
+              </div>
+              <div class="khayyam-row-wrap">
+                <div class="khayyam-cell-node dim-0">۱</div>
+                <div class="khayyam-cell-node dim-1">۷</div>
+                <div class="khayyam-cell-node dim-2">۲۱</div>
+                <div class="khayyam-cell-node dim-3">۳۵</div>
+                <div class="khayyam-cell-node dim-4">۳۵</div>
+                <div class="khayyam-cell-node">۲۱</div>
+                <div class="khayyam-cell-node">۷</div>
+                <div class="khayyam-cell-node">۱</div>
+              </div>
+            </div>
+
+            <div id="khayyam-deck-info" class="khayyam-info-box">
+              <span class="khayyam-info-text">روی تب‌های بالا کلیک کنید تا ستون مربوط به هر بُعد هندسی و فرمول بستهٔ آن را ببینید.</span>
+            </div>
+          </div>
+
+          <!-- Right: Mathematical Synthesis -->
+          <div class="card-shadcn">
+            <span class="corner-cross tl">+</span><span class="corner-cross tr">+</span><span class="corner-cross bl">+</span><span class="corner-cross br">+</span>
+            <div class="card-shadcn-header">
+              <span class="card-shadcn-title">
+                <i data-lucide="sparkles"></i>
+                <span>قانون سیمپلکس‌ها و استنتاج نهایی کلاس</span>
+              </span>
+            </div>
+
+            <div class="step-breakdown-list simplex-breakdown-list">
+              <!-- 1D: Always Visible Baseline -->
+              <div class="step-breakdown-row">
+                <div class="step-meta-right">
+                  <span class="step-num-circle" style="background:#0284c7;">۱D</span>
+                  <div class="step-text-wrap">
+                    <span class="step-title">بُعد ۱ (پاره‌خط)</span>
+                    <span class="step-sub">۲ رأس &larr; ۲ کپی نجمه</span>
+                  </div>
+                </div>
+                <div class="step-sum-badge simplex-badge">
+                  <span class="math-tex" data-tex="\displaystyle \binom{n+1}{2}"></span>
+                </div>
+              </div>
+
+              <!-- 2D: Accordion Fragment -->
+              <div class="step-breakdown-row accordion-fragment fragment">
+                <div class="step-meta-right">
+                  <span class="step-num-circle" style="background:#059669;">۲D</span>
+                  <div class="step-text-wrap">
+                    <span class="step-title">بُعد ۲ (مثلث)</span>
+                    <span class="step-sub">۳ رأس &larr; ۳ کپی نوشین</span>
+                  </div>
+                </div>
+                <div class="step-sum-badge simplex-badge">
+                  <span class="math-tex" data-tex="\displaystyle \binom{n+2}{3}"></span>
+                </div>
+              </div>
+
+              <!-- 3D: Accordion Fragment -->
+              <div class="step-breakdown-row accordion-fragment fragment">
+                <div class="step-meta-right">
+                  <span class="step-num-circle" style="background:#d97706;">۳D</span>
+                  <div class="step-text-wrap">
+                    <span class="step-title">بُعد ۳ (چهاروجهی)</span>
+                    <span class="step-sub">۴ رأس &larr; ۴ کپی اقدس</span>
+                  </div>
+                </div>
+                <div class="step-sum-badge simplex-badge">
+                  <span class="math-tex" data-tex="\displaystyle \binom{n+3}{4}"></span>
+                </div>
+              </div>
+
+              <!-- 4D: Accordion Fragment -->
+              <div class="step-breakdown-row accordion-fragment fragment">
+                <div class="step-meta-right">
+                  <span class="step-num-circle" style="background:#be123c;">۴D</span>
+                  <div class="step-text-wrap">
+                    <span class="step-title">بُعد ۴ (پنج‌خانه / 4-Simplex)</span>
+                    <span class="step-sub">۵ رأس &larr; ۵ کپی فضایی</span>
+                  </div>
+                </div>
+                <div class="step-sum-badge simplex-badge">
+                  <span class="math-tex" data-tex="\displaystyle \binom{n+4}{5}"></span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Authentic Mathematical Conclusion: Accordion Fragment -->
+            <div class="code-math-box highlight-amber accordion-fragment fragment" style="margin-top: 0.5rem; padding: 0.65rem 0.85rem; text-align: right; direction: rtl !important;">
+              <div style="font-weight: 800; font-size: 0.92rem; color: #78350f; margin-bottom: 0.25rem;">
+                قضیه تقارن سیمپلکس‌ها در بُعد <span class="math-tex" data-tex="d"></span>:
+              </div>
+              <p style="font-size: 0.86rem; line-height: 1.65; color: #78350f;">
+                تعداد کپی‌ها تصادفی نیست؛ بلکه ساختار هندسی سیمپلکس‌هاست. برای ایجاد تعادل و جمع یکسان در تمام رأس‌های یک شیء در بعد <span class="math-tex" data-tex="d"></span>، همواره به <strong><span class="math-tex" data-tex="d+1"></span> کپی</strong> نیاز است. به همین دلیل در بعد چهارم نیز به ۵ کپی نیاز خواهد بود.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ================= SLIDE 10: APPRECIATION ================= -->
+      <section class="geist-slide slide-item" id="slide-10">
+        <div class="thankyou-simple-wrapper">
+          <span class="corner-cross tl">+</span><span class="corner-cross tr">+</span><span class="corner-cross bl">+</span><span class="corner-cross br">+</span>
+
+          <div class="thankyou-fun-badge">
+            <img src="assets/images/school-logo.png" alt="سمپاد" class="thankyou-mini-logo">
+            <span>پایان ارائه • سمپاد شهید باهنر ۳ کرج</span>
+          </div>
+
+          <h1 class="thankyou-simple-title">
+            خیلی ممنون از <span class="cover-title-highlight">توجه و همراهی شما</span>
+          </h1>
+
+          <p class="thankyou-simple-desc">
+            امیدواریم از این ارائه و حل هندسی مسئله لذت برده باشید.
+          </p>
+        </div>
+      </section>
+
+    </main>
+
+    <!-- ================= FOOTER (CONTROLS & PROGRESS) ================= -->
+    <footer class="geist-footer">
+      <!-- Right Nav Group (First in RTL: Primary Next Action & Tools) -->
+      <div class="footer-nav-group">
+        <button class="btn-shadcn btn-shadcn-outline" id="prev-slide-btn" disabled>
+          <i data-lucide="chevron-right"></i>
+          <span>اسلاید قبل</span>
+        </button>
+        <button class="btn-shadcn btn-shadcn-ghost" id="print-toggle" title="چاپ جزوه و خروجی PDF رسمی (Ctrl+P)">
+          <i data-lucide="printer"></i>
+        </button>
+        <button class="btn-shadcn btn-shadcn-ghost" id="help-toggle" title="راهنمای کلیدها [?]">
+          <i data-lucide="help-circle"></i>
+        </button>
+        <button class="btn-shadcn btn-shadcn-ghost" id="whiteboard-toggle" title="وایت‌بورد و تخته یادداشت هوشمند [W]">
+          <i data-lucide="pen-tool"></i>
+        </button>
+        <button class="btn-shadcn btn-shadcn-ghost" id="scale-toggle" title="تنظیم مقیاس پروژکتور (Ctrl + Shift + Z)">
+          <i data-lucide="scaling"></i>
+          <span id="scale-indicator-text" style="font-size: 0.8rem; font-weight: 700;">۹۰٪</span>
+        </button>
+      </div>
+
+      <!-- Center Progress Indicator -->
+      <div class="footer-progress-box">
+        <div class="progress-track-line">
+          <div class="progress-fill-line" id="progress-indicator"></div>
+        </div>
+        <div class="dots-nav-strip" id="dots-container"></div>
+        <span class="footer-slide-counter" id="slide-counter-text">اسلاید ۱ از ۱۰</span>
+      </div>
+
+      <!-- Left Nav Group (Last in RTL: Secondary Prev Action) -->
+      <div class="footer-nav-group">
+        <button class="btn-shadcn btn-shadcn-default btn-shimmer" id="next-slide-btn">
+          <span>اسلاید بعد</span>
+          <i data-lucide="chevron-left"></i>
+        </button>
+      </div>
+    </footer>
+  </div>
+
+  <!-- ================= SMART WHITEBOARD / SCRATCHPAD OVERLAY ================= -->
+  <div id="whiteboard-overlay" class="whiteboard-overlay" style="display: none;">
+    <!-- Background Backdrop (Transparent / Math Grid / Solid) -->
+    <div class="whiteboard-backdrop mode-transparent" id="whiteboard-backdrop"></div>
+
+    <!-- Drawing Canvas -->
+    <canvas id="whiteboard-canvas" class="whiteboard-canvas"></canvas>
+
+    <!-- Floating Top Info Bar -->
+    <div class="whiteboard-top-bar">
+      <div class="wb-top-tag">
+        <span class="wb-pulse-dot"></span>
+        <span id="wb-status-title">تخته یادداشت و رسم — اسلاید ۱</span>
+      </div>
+
+      <div class="wb-top-actions">
+        <button class="wb-btn-pill" id="wb-bg-toggle" title="تغییر پس‌زمینه تخته [G]">
+          <i data-lucide="layout-grid"></i>
+          <span id="wb-bg-name">زمینه: روی اسلاید</span>
+        </button>
+        <button class="wb-btn-pill" id="wb-download-btn" title="ذخیره یادداشت‌ها به صورت عکس PNG">
+          <i data-lucide="download"></i>
+          <span>ذخیره تصویر</span>
+        </button>
+        <button class="wb-btn-pill wb-btn-close" id="wb-close-btn" title="بستن تخته [Esc یا W]">
+          <i data-lucide="x"></i>
+          <span>بستن [Esc]</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Floating Bottom Dock / Toolbar -->
+    <div class="whiteboard-dock" id="whiteboard-dock">
+      <!-- Tool Selection -->
+      <div class="wb-dock-group">
+        <button class="wb-tool-btn active" data-tool="pen" title="ماژیک / قلم [P]">
+          <i data-lucide="pen-tool"></i>
+          <span class="wb-tool-label">قلم</span>
+        </button>
+        <button class="wb-tool-btn" data-tool="highlighter" title="ماژیک هایلایتر فسفری [H]">
+          <i data-lucide="highlighter"></i>
+          <span class="wb-tool-label">هایلایتر</span>
+        </button>
+        <button class="wb-tool-btn" data-tool="eraser" title="پاک‌کن [E]">
+          <i data-lucide="eraser"></i>
+          <span class="wb-tool-label">پاک‌کن</span>
+        </button>
+      </div>
+
+      <div class="wb-dock-divider"></div>
+
+      <!-- Color Palette -->
+      <div class="wb-dock-group wb-color-palette" id="wb-color-group">
+        <button class="wb-color-dot active" data-color="#2563eb" style="--dot-color: #2563eb;" title="آبی رویال"></button>
+        <button class="wb-color-dot" data-color="#dc2626" style="--dot-color: #dc2626;" title="قرمز"></button>
+        <button class="wb-color-dot" data-color="#16a34a" style="--dot-color: #16a34a;" title="سبز زمردی"></button>
+        <button class="wb-color-dot" data-color="#d97706" style="--dot-color: #d97706;" title="نارنجی کهربایی"></button>
+        <button class="wb-color-dot" data-color="#0f172a" style="--dot-color: #0f172a;" title="مشکی"></button>
+        <button class="wb-color-dot" data-color="#9333ea" style="--dot-color: #9333ea;" title="بنفش"></button>
+        <button class="wb-color-dot" data-color="#eab308" style="--dot-color: #eab308;" title="زرد طلایی"></button>
+      </div>
+
+      <div class="wb-dock-divider"></div>
+
+      <!-- Stroke Sizes -->
+      <div class="wb-dock-group" id="wb-size-group">
+        <button class="wb-size-btn" data-size="2" title="نازک (۲px)">
+          <span class="size-circle" style="width: 4px; height: 4px;"></span>
+        </button>
+        <button class="wb-size-btn active" data-size="4" title="متوسط (۴px)">
+          <span class="size-circle" style="width: 7px; height: 7px;"></span>
+        </button>
+        <button class="wb-size-btn" data-size="8" title="ضخیم (۸px)">
+          <span class="size-circle" style="width: 11px; height: 11px;"></span>
+        </button>
+        <button class="wb-size-btn" data-size="16" title="خیلی ضخیم (۱۶px)">
+          <span class="size-circle" style="width: 16px; height: 16px;"></span>
+        </button>
+      </div>
+
+      <div class="wb-dock-divider"></div>
+
+      <!-- Undo, Redo, Clear -->
+      <div class="wb-dock-group">
+        <button class="wb-action-btn" id="wb-undo-btn" title="بازگشت (Undo) [Ctrl+Z]" disabled>
+          <i data-lucide="undo-2"></i>
+        </button>
+        <button class="wb-action-btn" id="wb-redo-btn" title="حرکت به جلو (Redo) [Ctrl+Y]" disabled>
+          <i data-lucide="redo-2"></i>
+        </button>
+        <button class="wb-action-btn wb-action-danger" id="wb-clear-btn" title="پاک‌کردن کل تخته">
+          <i data-lucide="trash-2"></i>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ================= SHORTCUTS MODAL ================= -->
+  <div class="shadcn-dialog-overlay" id="help-modal">
+    <div class="shadcn-dialog-panel">
+      <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.15rem; padding-bottom: 0.65rem; border-bottom: 1.5px solid var(--border-subtle);">
+        <h3 style="font-size: 1.15rem; font-weight: 800; color: var(--foreground); display: flex; align-items: center; gap: 0.5rem;">
+          <i data-lucide="keyboard"></i>
+          <span>کلیدهای میانبر ارائه کلاسی (ویژه چیدمان راست‌به‌چپ)</span>
+        </h3>
+        <button id="close-help-btn" class="btn-shadcn btn-shadcn-ghost" style="padding: 0 0.5rem; height: 28px;">✕</button>
+      </div>
+
+      <div class="step-breakdown-list">
+        <div class="step-breakdown-row">
+          <div class="step-meta-right">
+            <span class="step-num-circle" style="width: auto; min-width: 58px; border-radius: 6px; padding: 0 8px;">Space / &larr;</span>
+            <div><strong>اسلاید / گام بعد:</strong> کلید Space یا فلش چپ (پیشروی طبیعی در متن فارسی)</div>
+          </div>
+        </div>
+        <div class="step-breakdown-row">
+          <div class="step-meta-right">
+            <span class="step-num-circle" style="width: auto; min-width: 58px; border-radius: 6px; padding: 0 8px;">&rarr;</span>
+            <div><strong>اسلاید / گام قبل:</strong> کلید فلش راست (بازگشت به عقب)</div>
+          </div>
+        </div>
+        <div class="step-breakdown-row">
+          <div class="step-meta-right">
+            <span class="step-num-circle" style="width: auto; min-width: 50px; border-radius: 6px; padding: 0 8px; background: #2563eb;">W</span>
+            <div><strong>وایت‌بورد و تخته رسم:</strong> باز کردن صفحه یادداشت شفاف و ماژیک روی اسلایدها (سازگار با قلم هوشمند و ماوس)</div>
+          </div>
+        </div>
+        <div class="step-breakdown-row">
+          <div class="step-meta-right">
+            <span class="step-num-circle" style="width: auto; min-width: 50px; border-radius: 6px; padding: 0 8px;">F11 / F</span>
+            <div><strong>تمام‌صفحه:</strong> فول‌اسکرین تمیز بدون نوار مرورگر</div>
+          </div>
+        </div>
+        <div class="step-breakdown-row">
+          <div class="step-meta-right">
+            <span class="step-num-circle" style="width: auto; min-width: 50px; border-radius: 6px; padding: 0 8px;">P</span>
+            <div><strong>کنتراست پروژکتور:</strong> بهینه‌سازی پرتو برای نور شدید کلاس</div>
+          </div>
+        </div>
+        <div class="step-breakdown-row">
+          <div class="step-meta-right">
+            <span class="step-num-circle" style="width: auto; min-width: 50px; border-radius: 6px; padding: 0 8px;">Ctrl + P</span>
+            <div><strong>چاپ / جزوه PDF:</strong> خروجی رسمی ۷ صفحه‌ای تمام اسلایدها برای تحویل به دبیر</div>
+          </div>
+        </div>
+        <div class="step-breakdown-row">
+          <div class="step-meta-right">
+            <span class="step-num-circle" style="width: auto; min-width: 50px; border-radius: 6px; padding: 0 8px;">ماوس</span>
+            <div><strong>کنترل ۳ بعدی:</strong> کلیک چپ و درگ برای چرخش، اسکرول برای زوم</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Vendor Libraries (Fully Offline) -->
+  <script src="assets/vendor/three.min.js"></script>
+  <script src="assets/vendor/OrbitControls.js"></script>
+  <script src="assets/vendor/katex.min.js"></script>
+  <script src="assets/vendor/lucide.min.js"></script>
+
+  <!-- Presentation App Engine -->
+  <script src="assets/js/scene3d.js?v=7.0"></script>
+  <script src="assets/js/app.js?v=7.0"></script>
+  <script src="assets/js/whiteboard.js?v=1.0"></script>
+</body>
+</html>
