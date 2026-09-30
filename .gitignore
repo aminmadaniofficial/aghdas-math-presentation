@@ -12,5 +12,6 @@ Thumbs.db
 .tempmediaStorage/
 scratch/
 
-# Archives (keep if needed, or gitignore temporary archives)
+# Archives
 *.tar.gz
+*.zip
